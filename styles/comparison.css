@@ -1,0 +1,134 @@
+/* ════════════════════════════════════════════
+   COMPARISON.CSS — Normal vs Premium table
+════════════════════════════════════════════ */
+
+#comparison {
+  padding: var(--section-py) 0;
+  background: var(--bg);
+}
+
+.comp-hd {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ── Table wrapper — horizontal scroll on mobile ── */
+.tbl-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scroll hint on mobile */
+.tbl-scroll-hint {
+  display: none;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 640px) {
+  .tbl-scroll-hint { display: block; }
+}
+
+table.ctbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 520px;
+}
+
+.ctbl thead th {
+  padding: 20px 28px;
+  text-align: left;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border-solid);
+}
+.ctbl thead th:first-child {
+  border-right: 1px solid var(--border-solid);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  width: 36%;
+}
+.ctbl thead th.col-normal {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+}
+.ctbl thead th.col-premium {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.ctbl tbody tr {
+  border-bottom: 1px solid var(--border-solid);
+}
+.ctbl tbody tr:last-child {
+  border-bottom: none;
+}
+.ctbl tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.013);
+}
+.ctbl tbody tr:hover {
+  background: rgba(37, 99, 235, 0.025);
+}
+.ctbl tbody td {
+  padding: 14px 28px;
+  vertical-align: top;
+}
+.ctbl tbody td:first-child {
+  font-weight: 500;
+  color: var(--text);
+  border-right: 1px solid var(--border-solid);
+}
+.ctbl tbody td:not(:first-child) {
+  color: var(--text-muted);
+}
+
+/* ── Recommendation cards below table ── */
+.comp-reco {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.reco-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-solid);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  transition: box-shadow 0.2s;
+}
+.reco-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.reco-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.reco-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.68;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .comp-reco {
+    grid-template-columns: 1fr;
+  }
+}

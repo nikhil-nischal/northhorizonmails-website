@@ -1,0 +1,67 @@
+/* ════════════════════════════════════════════
+   TOKENS.CSS — Design System Variables
+   Edit this file to change colors, fonts, and
+   spacing across the entire site.
+════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Colors ─────────────────────────────── */
+  --bg:             #FAFAF9;      /* Main background */
+  --bg-alt:         #FFFFFF;      /* Section alternate background */
+  --text:           #111111;      /* Primary text */
+  --text-muted:     #666666;      /* Secondary text */
+  --text-light:     #999999;      /* Tertiary / placeholder text */
+
+  /* Accent (blue) */
+  --accent:         #2563EB;
+  --accent-dark:    #1D4ED8;
+  --accent-bg:      #EFF6FF;      /* Light blue tint for backgrounds */
+  --accent-border:  rgba(37, 99, 235, 0.2);
+
+  /* Borders */
+  --border:         rgba(0, 0, 0, 0.08);
+  --border-solid:   #E8E8E4;
+
+  /* Dark section (Guarantee, Footer) */
+  --dark-bg:           #07091A;
+  --dark-surface:      rgba(255, 255, 255, 0.04);
+  --dark-border:       rgba(255, 255, 255, 0.1);
+  --dark-text:         rgba(255, 255, 255, 0.65);
+  --dark-text-muted:   rgba(255, 255, 255, 0.45);
+  --dark-text-faint:   rgba(255, 255, 255, 0.28);
+  --dark-accent:       #60A5FA;
+  --dark-accent-dim:   rgba(37, 99, 235, 0.28);
+  --dark-accent-text:  #93C5FD;
+
+  /* ── Shadows ─────────────────────────────── */
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md:  0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg:  0 8px 48px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 4px 16px rgba(37, 99, 235, 0.30);
+
+  /* ── Typography ──────────────────────────── */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans:  'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* ── Sizing ──────────────────────────────── */
+  --max-w:      1200px;
+  --nav-h:      68px;
+  --radius:     10px;
+  --radius-lg:  16px;
+  --section-py: 104px;
+
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-py: 56px;
+  }
+}

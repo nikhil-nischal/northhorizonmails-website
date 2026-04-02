@@ -1,0 +1,130 @@
+/* ════════════════════════════════════════════
+   GUARANTEE.CSS — Guarantee section
+════════════════════════════════════════════ */
+
+#guarantee {
+  padding: var(--section-py) 0;
+  background: var(--dark-bg);
+}
+
+#guarantee .tag {
+  color: var(--dark-accent);
+}
+
+.g-hd h2 {
+  color: white;
+  margin-bottom: 14px;
+}
+
+.g-subhead {
+  font-size: 17px;
+  color: var(--dark-text-muted);
+  max-width: 540px;
+  line-height: 1.72;
+  margin-bottom: 52px;
+}
+
+/* ── Two-column body ── */
+.g-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ── Left column ── */
+.g-left > p {
+  font-size: 16px;
+  color: var(--dark-text);
+  line-height: 1.82;
+  margin-bottom: 26px;
+}
+
+.g-conditions {
+  margin: 4px 0 28px;
+}
+
+.g-cond {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--dark-border);
+  font-size: 14px;
+  color: var(--dark-text);
+  line-height: 1.62;
+}
+.g-cond:last-child {
+  border-bottom: none;
+}
+
+.g-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--dark-accent-dim);
+  color: var(--dark-accent-text);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.g-result {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+}
+
+/* ── Right column box ── */
+.g-right {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.g-box h3 {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+.g-box p {
+  font-size: 14px;
+  color: var(--dark-text-muted);
+  line-height: 1.78;
+}
+
+.g-sep {
+  height: 1px;
+  background: var(--dark-border);
+}
+
+.g-disclaimer {
+  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.74;
+}
+
+/* ── Responsive ── */
+@media (max-width: 868px) {
+  .g-body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .g-subhead {
+    max-width: 100%;
+  }
+}

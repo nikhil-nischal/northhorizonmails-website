@@ -1,0 +1,46 @@
+/* ════════════════════════════════════════════
+   TRUST.CSS — Trust bar / logo strip
+════════════════════════════════════════════ */
+
+#trust {
+  background: var(--bg-alt);
+  padding: 52px 0;
+  border-top: 1px solid var(--border-solid);
+  border-bottom: 1px solid var(--border-solid);
+}
+
+.trust-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-ph {
+  width: 108px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+.logo-ph:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .logo-ph {
+    width: 88px;
+    height: 28px;
+  }
+}

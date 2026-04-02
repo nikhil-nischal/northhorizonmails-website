@@ -1,0 +1,45 @@
+/* ════════════════════════════════════════════
+   CTA.CSS — Final call-to-action section
+════════════════════════════════════════════ */
+
+#final-cta {
+  padding: var(--section-py) 0;
+  background: var(--bg-alt);
+  text-align: center;
+  border-top: 1px solid var(--border-solid);
+}
+
+#final-cta h2 {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.final-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 36px;
+  line-height: 1.76;
+}
+
+#final-cta .btn {
+  font-size: 16px;
+  padding: 14px 32px;
+}
+
+.final-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.final-note span + span::before {
+  content: ' · ';
+}
+
+@media (max-width: 480px) {
+  #final-cta .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}

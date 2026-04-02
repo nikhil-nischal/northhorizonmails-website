@@ -1,0 +1,42 @@
+/* ════════════════════════════════════════════
+   PROBLEM.CSS — The Problem section
+════════════════════════════════════════════ */
+
+#problem {
+  padding: var(--section-py) 0;
+  background: var(--bg);
+}
+
+.problem-inner {
+  max-width: 720px;
+}
+
+.problem-inner h2 {
+  margin-bottom: 44px;
+}
+
+.problem-inner p {
+  font-size: 17.5px;
+  line-height: 1.84;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.problem-closer {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  margin-top: 36px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 768px) {
+  .problem-inner p {
+    font-size: 16px;
+    line-height: 1.78;
+  }
+  .problem-closer {
+    font-size: 17px !important;
+  }
+}

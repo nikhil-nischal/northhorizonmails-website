@@ -1,0 +1,28 @@
+/* ════════════════════════════════════════════
+   ANIMATIONS.CSS — Scroll fade-in
+════════════════════════════════════════════ */
+
+.fi {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fi.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fi.d1 { transition-delay: 0.10s; }
+.fi.d2 { transition-delay: 0.20s; }
+.fi.d3 { transition-delay: 0.30s; }
+.fi.d4 { transition-delay: 0.40s; }
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fi {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

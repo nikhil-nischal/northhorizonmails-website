@@ -1,0 +1,88 @@
+/* ════════════════════════════════════════════
+   HERO.CSS
+════════════════════════════════════════════ */
+
+#hero {
+  padding: calc(var(--nav-h) + 80px) 0 100px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% -10%, rgba(37, 99, 235, 0.07) 0%, transparent 65%), var(--bg);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+#hero h1 {
+  max-width: 840px;
+  margin: 0 auto 26px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 44px;
+  line-height: 1.76;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-ctas .btn {
+  font-size: 16px;
+  padding: 14px 28px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  #hero {
+    padding: calc(var(--nav-h) + 56px) 0 72px;
+  }
+  .hero-sub {
+    font-size: 16px;
+  }
+  .hero-ctas .btn {
+    font-size: 15px;
+    padding: 13px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    font-size: 12px;
+    text-align: center;
+    padding: 6px 12px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .hero-ctas .btn {
+    justify-content: center;
+  }
+}

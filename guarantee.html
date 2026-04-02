@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Deliverability Guarantee — NorthHorizonMails</title>
+  <meta name="description" content="Full details on the NorthHorizonMails Deliverability Guarantee. Follow the system, and if deliverability doesn't perform, we refund 50% of your domain costs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/page.css" />
+  <link rel="stylesheet" href="styles/faq.css" />
+  <style>
+    /* ── Guarantee page specific ── */
+    .g-page-hero {
+      padding: calc(var(--nav-h) + 64px) 0 72px;
+      background: var(--dark-bg);
+      text-align: center;
+    }
+    .g-page-hero .tag { color: #60A5FA; }
+    .g-page-hero h1 { color: white; max-width: 720px; margin: 0 auto 18px; }
+    .g-page-hero p {
+      font-size: 18px; color: rgba(255,255,255,0.55);
+      max-width: 560px; margin: 0 auto; line-height: 1.72;
+    }
+
+    .g-overview {
+      padding: 72px 0;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border-solid);
+    }
+    .g-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .g-stat {
+      text-align: center;
+      padding: 28px 20px;
+      background: var(--bg);
+      border: 1px solid var(--border-solid);
+      border-radius: var(--radius-lg);
+    }
+    .g-stat-n {
+      font-family: var(--font-serif);
+      font-size: 44px;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .g-stat-l {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .cond-detail {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-solid);
+    }
+    .cond-detail:last-child { border-bottom: none; }
+    .cond-n {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--accent); color: white;
+      font-size: 14px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .cond-body h3 {
+      font-family: var(--font-sans);
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cond-body p {
+      font-size: 14px; color: var(--text-muted); line-height: 1.76;
+    }
+
+    .claim-steps {
+      counter-reset: claim;
+    }
+    .claim-step {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 20px 0; border-bottom: 1px solid var(--border-solid);
+    }
+    .claim-step:last-child { border-bottom: none; }
+    .claim-n {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--accent-bg); color: var(--accent);
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+      border: 1.5px solid var(--accent-border);
+    }
+    .claim-body h3 {
+      font-family: var(--font-sans);
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 5px;
+    }
+    .claim-body p { font-size: 14px; color: var(--text-muted); line-height: 1.74; }
+
+    #g-faq { padding: var(--section-py) 0; background: var(--bg); }
+    #g-faq .faq-hd { text-align: center; margin-bottom: 44px; }
+
+    .g-cta-section {
+      padding: var(--section-py) 0;
+      background: var(--bg-alt);
+      text-align: center;
+      border-top: 1px solid var(--border-solid);
+    }
+    .g-cta-section h2 { max-width: 600px; margin: 0 auto 16px; }
+    .g-cta-section p {
+      font-size: 16px; color: var(--text-muted);
+      max-width: 460px; margin: 0 auto 32px; line-height: 1.72;
+    }
+    .g-cta-section .btn { font-size: 16px; padding: 14px 32px; }
+
+    @media (max-width: 700px) {
+      .g-overview-grid { grid-template-columns: 1fr; }
+      .cond-detail, .claim-step { flex-direction: row; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-top">North Horizon</span>
+      <span class="logo-bottom">Mails</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="guarantee.html" style="color:var(--accent)">Guarantee</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#pricing" class="btn btn-primary nav-cta">Get Started</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#how-it-works">How It Works</a>
+  <a href="index.html#pricing">Pricing</a>
+  <a href="guarantee.html">Guarantee</a>
+  <a href="index.html#faq">FAQ</a>
+  <a href="index.html#pricing" class="btn btn-primary">Get Started</a>
+</div>
+
+<!-- HERO -->
+<section class="g-page-hero">
+  <div class="container">
+    <span class="tag">The guarantee</span>
+    <h1>The Deliverability Guarantee — Full Details</h1>
+    <p>We're the only Outlook inbox provider that puts real money behind infrastructure claims. Here's exactly how it works, what's covered, and how to claim it.</p>
+  </div>
+</section>
+
+<!-- STATS OVERVIEW -->
+<section class="g-overview">
+  <div class="container">
+    <div class="g-overview-grid">
+      <div class="g-stat fi">
+        <p class="g-stat-n">50%</p>
+        <p class="g-stat-l">Refund on domain costs if deliverability doesn't perform after following the system</p>
+      </div>
+      <div class="g-stat fi d1">
+        <p class="g-stat-n">$10</p>
+        <p class="g-stat-l">Per domain per month add-on price — the cost of the guarantee itself</p>
+      </div>
+      <div class="g-stat fi d2">
+        <p class="g-stat-n">2 wks</p>
+        <p class="g-stat-l">Warmup period required to qualify — 1 extra week beyond standard warmup</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<section class="page-body">
+  <div class="container">
+    <div class="page-layout">
+
+      <!-- TOC -->
+      <nav class="page-toc">
+        <h4>On this page</h4>
+        <ul>
+          <li><a href="#what-it-covers">What it covers</a></li>
+          <li><a href="#the-5-conditions">The 5 conditions</a></li>
+          <li><a href="#what-counts">What "doesn't perform" means</a></li>
+          <li><a href="#how-to-claim">How to claim</a></li>
+          <li><a href="#why-we-can">Why we can offer this</a></li>
+          <li><a href="#g-faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Article -->
+      <div class="page-article">
+
+        <div class="article-section" id="what-it-covers">
+          <h2>What the guarantee covers</h2>
+          <p>The Deliverability Guarantee is an optional $10/domain/month add-on available on any NorthHorizonMails plan — Normal, Premium, Mixed, or Custom.</p>
+          <p>When you add it, you're purchasing two things:</p>
+          <ul>
+            <li><strong>An extended 2-week warmup protocol</strong> — instead of the standard 1 week, your inboxes warm for 14 days before you launch. This gives your domains maximum sender reputation before any cold email is sent.</li>
+            <li><strong>A 50% refund on domain costs</strong> if, after following the full system, your inboxes still fail to land in the primary inbox at an acceptable rate.</li>
+          </ul>
+          <p>The guarantee covers the inbox infrastructure we provide — the Microsoft tenants, DNS configuration, IP reputation, and sending setup. It does not cover your email copy, your list quality, or external reputation factors outside our control.</p>
+          <div class="highlight-box">
+            <p><strong>The refund is 50% of your domain costs</strong> — not inbox costs, not setup fees. Domain costs refer to the monthly fee you pay per domain. If you're on a 10-domain plan at $65/domain, your domain costs are $650/month. A 50% refund means $325 back.</p>
+          </div>
+        </div>
+
+        <div class="article-section" id="the-5-conditions">
+          <h2>The 5 conditions</h2>
+          <p>To qualify for a refund, all five of the following conditions must be met. Each one is non-negotiable. We set these conditions because skipping any one of them is the most common reason deliverability fails — and when it happens, it's not our infrastructure that's at fault.</p>
+
+          <div class="cond-detail">
+            <div class="cond-n">1</div>
+            <div class="cond-body">
+              <h3>Use our verified domains</h3>
+              <p>Your domains must be purchased through NorthHorizonMails or verified by us before setup begins. Domains you bring from third-party registrars may carry prior reputation history we can't control or audit. Our verified domains start clean, with no prior sending history, no previous spam associations, and proper WHOIS configuration. The guarantee does not apply to external domains.</p>
+            </div>
+          </div>
+          <div class="cond-detail">
+            <div class="cond-n">2</div>
+            <div class="cond-body">
+              <h3>Complete a full 2-week warmup using our recommended settings</h3>
+              <p>Standard warmup is 1 week. The guarantee extends this to 2 full weeks (14 days). During warmup, your inboxes must follow our recommended daily sending limits — typically starting at 5-10 emails per inbox on day 1 and gradually increasing. Do not skip days. Do not accelerate the schedule. We'll provide the exact warmup settings when you add the guarantee.</p>
+            </div>
+          </div>
+          <div class="cond-detail">
+            <div class="cond-n">3</div>
+            <div class="cond-body">
+              <h3>Launch your campaign in week 3</h3>
+              <p>After the 2-week warmup, you launch in week 3 — not earlier. Launching before warmup is complete is the single biggest cause of deliverability failure. Even 1-2 days early can meaningfully damage sender reputation. The guarantee requires that you honor this timeline.</p>
+            </div>
+          </div>
+          <div class="cond-detail">
+            <div class="cond-n">4</div>
+            <div class="cond-body">
+              <h3>Stay within suggested daily sending limits</h3>
+              <p>Normal license: 4-5 emails per inbox per day. Premium: 8-10 per inbox per day. These are maximums, not targets. Pushing beyond them — especially in the early weeks of a new domain — degrades IP reputation faster than any other single factor. The guarantee requires you to respect these limits from week 3 onward.</p>
+            </div>
+          </div>
+          <div class="cond-detail">
+            <div class="cond-n">5</div>
+            <div class="cond-body">
+              <h3>No spam trigger words in your copy</h3>
+              <p>Subject lines and body copy containing phrases like "Act Now", "Limited Time Offer", "100% Free", "You've Been Selected", excessive capitalization, or other well-known spam triggers will cause deliverability failure regardless of infrastructure quality. Your copy must be clean, personalized, and compliant with CAN-SPAM/GDPR standards. If your copy is flagged by spam filters, that is not an infrastructure problem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-section" id="what-counts">
+          <h2>What "deliverability doesn't perform" means</h2>
+          <p>We define deliverability failure as: <strong>more than 40% of your sent emails landing in spam or promotions folders</strong>, as measured over a rolling 7-day period after your week 3 launch, using standard inbox placement testing tools (e.g. GlockApps, Mail-Tester, or equivalent).</p>
+          <p>To make a claim, you'll need to provide:</p>
+          <ul>
+            <li>Inbox placement test results showing the failure rate</li>
+            <li>Screenshots or exports confirming your warmup schedule was followed</li>
+            <li>Sample email copy used in the campaign</li>
+            <li>Your account details and domain list</li>
+          </ul>
+          <p>We review all claims within 5 business days. If your claim is approved, the refund is processed within 7 business days.</p>
+          <div class="highlight-box">
+            <p><strong>Honest note:</strong> In practice, when operators follow all five conditions, deliverability failure is rare. The guarantee exists because we trust our infrastructure — not because we expect to pay out regularly. If you're following the system, you'll land in primary.</p>
+          </div>
+        </div>
+
+        <div class="article-section" id="how-to-claim">
+          <h2>How to claim your refund</h2>
+
+          <div class="claim-step">
+            <div class="claim-n">1</div>
+            <div class="claim-body">
+              <h3>Run an inbox placement test</h3>
+              <p>Use GlockApps, Mail-Tester, or any equivalent tool to get a measurement of where your emails are landing. Take screenshots showing the test date, your domain, and the placement results.</p>
+            </div>
+          </div>
+          <div class="claim-step">
+            <div class="claim-n">2</div>
+            <div class="claim-body">
+              <h3>Contact us within 30 days of your week 3 launch</h3>
+              <p>Email support@northhorizonmails.com with subject line: "Guarantee Claim — [your domain name]". Claims submitted more than 30 days after your launch date are not eligible.</p>
+            </div>
+          </div>
+          <div class="claim-step">
+            <div class="claim-n">3</div>
+            <div class="claim-body">
+              <h3>Submit your documentation</h3>
+              <p>We'll ask for: inbox placement test results, warmup schedule confirmation, sample copy from the campaign, and your account/domain details. Incomplete submissions will be returned for more information — this does not affect your 30-day window.</p>
+            </div>
+          </div>
+          <div class="claim-step">
+            <div class="claim-n">4</div>
+            <div class="claim-body">
+              <h3>Review and refund</h3>
+              <p>We'll review your claim within 5 business days and confirm our decision. Approved claims receive a 50% refund on your domain costs within 7 additional business days, issued back to your original payment method.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-section" id="why-we-can">
+          <h2>Why we can offer this</h2>
+          <p>Every other inbox provider disclaims responsibility for deliverability the moment you sign up. We don't. Here's why we're confident enough to put money behind our infrastructure:</p>
+          <ul>
+            <li><strong>Individual US-based Microsoft tenants.</strong> Every domain runs on its own isolated Microsoft 365 tenant — not shared hosting, not recycled IP pools. Your sending reputation is entirely yours.</li>
+            <li><strong>Azure infrastructure.</strong> We run on Microsoft's own enterprise cloud. The same infrastructure Fortune 500 companies use. IP reputation from day one is bulletproof because we start clean every time.</li>
+            <li><strong>SPF, DKIM, DMARC configured by us.</strong> DNS authentication errors are the #1 cause of deliverability failure that operators attribute to "bad inboxes." We configure it. We verify it. We own it.</li>
+            <li><strong>End-to-end setup.</strong> We don't hand off SMTP credentials and disappear. We connect inboxes into your tool, verify the connection, and confirm warmup is starting correctly. We're involved until launch.</li>
+          </ul>
+          <p>When we control every variable in the infrastructure stack, we can stand behind it. That's why the guarantee exists — and why the 5 conditions matter. The only things outside our control are your copy and your warmup discipline. That's what the conditions protect against.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="g-faq">
+  <div class="container">
+    <div class="faq-hd fi">
+      <span class="tag">Questions about the guarantee</span>
+      <h2>Still have questions?</h2>
+    </div>
+    <div class="faq-list fi">
+      <div class="faq-item">
+        <button class="faq-q">Can I add the guarantee after I've already ordered?<span class="faq-ico">+</span></button>
+        <div class="faq-a">Yes, but only before your warmup starts. Once warmup has begun, the guarantee cannot be added to that domain cohort. Contact us when placing your order or within the first 24 hours of setup to add it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does the guarantee apply to every domain in my order?<span class="faq-ico">+</span></button>
+        <div class="faq-a">The guarantee is priced and applied per domain ($10/domain/month). You can add it to all domains in your order or only selected ones. Refunds are calculated per domain — only domains with the guarantee add-on are eligible for a claim.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I want to launch before week 3?<span class="faq-ico">+</span></button>
+        <div class="faq-a">You can launch whenever you want — the guarantee simply won't apply if you launch before completing the full 2-week warmup. If deliverability is a priority and you've paid for the guarantee, we strongly recommend respecting the timeline. That extra week makes a measurable difference.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I use my own domains with the guarantee?<span class="faq-ico">+</span></button>
+        <div class="faq-a">No. The guarantee requires our verified domains because we can only stand behind reputation that we control from day one. Domains with prior sending history, unknown WHOIS status, or third-party DNS configurations introduce variables we can't audit. The guarantee is only available on NorthHorizonMails verified domains.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is the refund the full domain cost or 50%?<span class="faq-ico">+</span></button>
+        <div class="faq-a">50% of your monthly domain costs for the affected billing period. If you have 10 domains at $65/month, your domain cost is $650/month. A successful claim returns $325. The guarantee add-on fee ($10/domain) is not refunded — that's the cost of the guarantee itself.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What inbox placement rate qualifies for a claim?<span class="faq-ico">+</span></button>
+        <div class="faq-a">More than 40% of emails landing in spam or promotions, measured over a 7-day window after your week 3 launch using a standard inbox placement testing tool. You'll need to provide the test results as part of your claim documentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="g-cta-section">
+  <div class="container">
+    <h2 class="fi">Ready to send with confidence?</h2>
+    <p class="fi d1">Add the Deliverability Guarantee to any plan for $10/domain/month. The only inbox provider that bets on its own infrastructure.</p>
+    <a href="index.html#pricing" class="btn btn-primary fi d2">View Pricing</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">
+        <span class="logo-top">North Horizon</span>
+        <span class="logo-bottom">Mails</span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="guarantee.html">Guarantee</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="footer-contact">Contact: <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <ul class="footer-legal">
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 NorthHorizonMails. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

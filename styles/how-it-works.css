@@ -1,0 +1,181 @@
+/* ════════════════════════════════════════════
+   HOW-IT-WORKS.CSS
+════════════════════════════════════════════ */
+
+#how-it-works {
+  padding: var(--section-py) 0;
+  background: var(--bg);
+}
+
+.how-hd {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* ── Timeline "Week 2 live" callout bar ── */
+.timeline-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.tl-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-solid);
+  border-radius: 8px;
+  padding: 10px 18px;
+  min-width: 86px;
+}
+
+.tl-n {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.tl-l {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tl-arrow {
+  font-size: 16px;
+  color: var(--border-solid);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tl-live {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+}
+.tl-live .tl-n,
+.tl-live .tl-l {
+  color: white;
+}
+
+/* ── Steps grid ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  position: relative;
+}
+
+/* Connecting line between circles */
+.steps::after {
+  content: '';
+  position: absolute;
+  top: 23px;
+  left: calc(12.5% + 24px);
+  right: calc(12.5% + 24px);
+  height: 1px;
+  background: var(--border-solid);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-n {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  /* White ring so the connecting line appears to run BETWEEN circles */
+  box-shadow: 0 0 0 7px var(--bg);
+}
+
+.step h3 {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 9px;
+  line-height: 1.3;
+}
+
+.step p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.72;
+}
+
+/* ── Note below steps ── */
+.steps-note {
+  margin: 44px auto 0;
+  max-width: 780px;
+  padding: 16px 22px;
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.76;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .steps::after {
+    display: none;
+  }
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-solid);
+  }
+  .step:last-child {
+    border-bottom: none;
+  }
+  .step-n {
+    margin-bottom: 0;
+    margin-top: 2px;
+    flex-shrink: 0;
+    /* On mobile, no connecting line so remove the ring */
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-bar {
+    gap: 4px;
+  }
+  .tl-step {
+    padding: 8px 12px;
+    min-width: 72px;
+  }
+  .tl-n { font-size: 11px; }
+  .tl-l { font-size: 10px; }
+  .tl-arrow { display: none; }
+}

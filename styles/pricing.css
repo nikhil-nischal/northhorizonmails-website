@@ -1,0 +1,215 @@
+/* ════════════════════════════════════════════
+   PRICING.CSS
+════════════════════════════════════════════ */
+
+#pricing {
+  padding: var(--section-py) 0;
+  background: var(--bg-alt);
+}
+
+.pricing-hd {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pricing-sub {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 570px;
+  margin: 0 auto 52px;
+  line-height: 1.72;
+}
+
+/* ── Cards grid ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* ── Single card ── */
+.card {
+  background: white;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  position: relative;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.card.featured {
+  border-color: var(--accent);
+  border-width: 2px;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.07), var(--shadow-md);
+}
+.card.featured:hover {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.13), var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.popular-pill {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── Card header ── */
+.plan-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.featured .plan-label {
+  color: var(--accent);
+}
+
+.plan-price {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.plan-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.plan-period {
+  font-size: 12.5px;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+
+/* ── Features list ── */
+.plan-feats {
+  list-style: none;
+  margin-bottom: 18px;
+}
+.plan-feats li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 5px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.plan-best {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-light);
+  line-height: 1.62;
+  margin-bottom: 18px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--border-solid);
+}
+
+.card .btn {
+  width: 100%;
+  font-size: 13.5px;
+  padding: 11px 14px;
+}
+
+/* ── Add-on cards (Volume Bonus + Guarantee) ── */
+.pricing-addons {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.addon-card {
+  background: white;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.addon-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.addon-card.addon-guarantee {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.addon-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.addon-guarantee .addon-icon {
+  background: white;
+}
+.addon-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.addon-body h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.addon-body p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.66;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .pricing-addons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .addon-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
