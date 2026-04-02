@@ -26,3 +26,5 @@ const PAYMENT_LINKS = {
     publishableKey: '',
   },
 };
+
+globalThis.PAYMENT_LINKS = PAYMENT_LINKS;

@@ -16,3 +16,5 @@ const CONTACT = {
     href: `https://wa.me/${CONTACT_WHATSAPP_NUMBER}`,
   },
 };
+
+globalThis.CONTACT = CONTACT;

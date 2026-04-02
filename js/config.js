@@ -23,3 +23,5 @@ const CONFIG = {
   supportEmail: typeof CONTACT !== 'undefined' ? CONTACT.email.label : 'info@northhorizonmails.com',
 
 };
+
+globalThis.CONFIG = CONFIG;
