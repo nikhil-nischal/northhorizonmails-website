@@ -55,12 +55,12 @@
 }
 
 .pillar h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--heading-weight);
   color: var(--text);
   margin-bottom: 10px;
-  line-height: 1.35;
+  line-height: var(--h3-line-height);
 }
 
 .pillar p {

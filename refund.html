@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Refund Policy — NorthHorizonMails</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/animations.css" />
@@ -85,7 +86,7 @@
 
         <div class="article-section" id="cancellation">
           <h2>2. Cancellation</h2>
-          <p>You may cancel your subscription at any time by contacting us at <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a>. There is no cancellation fee and no long-term commitment.</p>
+          <p>You may cancel your subscription at any time by contacting us at <a href="#" data-contact-email>Contact Email</a>. There is no cancellation fee and no long-term commitment.</p>
           <p>When you cancel:</p>
           <ul>
             <li>Your service remains active through the end of the current billing period.</li>
@@ -98,7 +99,7 @@
 
         <div class="article-section" id="deliverability-guarantee">
           <h2>3. Deliverability Guarantee Refund</h2>
-          <p>The Deliverability Guarantee is an optional $10/domain/month add-on that entitles you to a 50% refund on your domain costs if our infrastructure fails to deliver to the primary inbox after you follow the required system.</p>
+          <p>The Deliverability Guarantee is an optional $10/domain every 4 weeks add-on that entitles you to a 50% refund on your domain costs if our infrastructure fails to deliver to the primary inbox after you follow the required system.</p>
 
           <h3>What qualifies</h3>
           <ul>
@@ -113,10 +114,10 @@
           </ul>
 
           <h3>What the refund covers</h3>
-          <p>The refund is 50% of the monthly domain fees for the affected domains in the billing period during which the failure occurred. It does not cover inbox fees, setup fees, or the Guarantee add-on fee itself.</p>
+          <p>The refund is 50% of the domain fees for the affected domains in the billing period during which the failure occurred. It does not cover inbox fees, setup fees, or the Guarantee add-on fee itself.</p>
 
           <h3>Example calculation</h3>
-          <p>If you have 10 domains on Premium ($65/domain/month) and all 10 qualify for a claim: your domain costs are $650/month. The refund is 50% = $325.</p>
+          <p>If you have 10 domains on Premium ($65/domain every 4 weeks) and all 10 qualify for a claim: your domain costs are $650 every 4 weeks. The refund is 50% = $325.</p>
 
           <p>For full conditions and the claims process, see the <a href="guarantee.html">Guarantee page</a>.</p>
         </div>
@@ -135,7 +136,7 @@
             <li><strong>Provisioned and delivered inboxes</strong> where setup was completed successfully and the service functioned as described</li>
             <li><strong>Unused days</strong> within a paid billing period after cancellation</li>
             <li><strong>Deliverability issues caused by your email copy</strong>, list quality, or failure to follow the recommended warmup and sending schedule</li>
-            <li><strong>Deliverability Guarantee add-on fees</strong> ($10/domain/month) — these are the cost of the guarantee itself</li>
+            <li><strong>Deliverability Guarantee add-on fees</strong> ($10/domain every 4 weeks) — these are the cost of the guarantee itself</li>
             <li><strong>Domain replacement services</strong> — free domain replacements are provided as a service benefit, not as a refund trigger</li>
             <li><strong>Services cancelled after the warmup and launch period</strong> where campaigns were operating successfully</li>
             <li><strong>Accounts terminated for violations</strong> of our Acceptable Use Policy</li>
@@ -144,7 +145,7 @@
 
         <div class="article-section" id="how-to-request">
           <h2>6. How to Request a Refund</h2>
-          <p>To request a refund, email us at <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a> with:</p>
+          <p>To request a refund, email us at <a href="#" data-contact-email>Contact Email</a> with:</p>
           <ul>
             <li>Subject line: "Refund Request — [your domain or order reference]"</li>
             <li>Your account email address</li>
@@ -168,7 +169,7 @@
         <div class="article-section" id="contact">
           <h2>8. Contact</h2>
           <p>For refund requests, billing questions, or cancellation:</p>
-          <p><strong>Email:</strong> <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a></p>
+          <p><strong>Email:</strong> <a href="#" data-contact-email>Contact Email</a></p>
           <p>Our support team responds within 24-48 hours on business days.</p>
         </div>
 
@@ -191,7 +192,13 @@
         <li><a href="guarantee.html">Guarantee</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
       </ul>
-      <div class="footer-contact">Contact: <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a></div>
+      <div class="footer-contact">
+        <span class="footer-contact-label">Contact</span>
+        <div class="footer-contact-links">
+          <a href="#" class="footer-contact-email" data-contact-email>Contact Email</a>
+          <a href="#" class="footer-contact-whatsapp" data-contact-whatsapp target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
       <ul class="footer-legal">
@@ -204,6 +211,7 @@
   </div>
 </footer>
 
+<script src="js/contact.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
 </body>

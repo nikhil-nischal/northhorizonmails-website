@@ -39,6 +39,7 @@ table.ctbl {
   border-collapse: collapse;
   font-size: 14px;
   min-width: 520px;
+  table-layout: fixed;
 }
 
 .ctbl thead th {
@@ -55,6 +56,10 @@ table.ctbl {
   text-transform: uppercase;
   color: var(--text-light);
   width: 36%;
+}
+.ctbl thead th:nth-child(2),
+.ctbl thead th:nth-child(3) {
+  width: 32%;
 }
 .ctbl thead th.col-normal {
   font-weight: 600;
@@ -82,11 +87,13 @@ table.ctbl {
 .ctbl tbody td {
   padding: 14px 28px;
   vertical-align: top;
+  width: 32%;
 }
 .ctbl tbody td:first-child {
   font-weight: 500;
   color: var(--text);
   border-right: 1px solid var(--border-solid);
+  width: 36%;
 }
 .ctbl tbody td:not(:first-child) {
   color: var(--text-muted);

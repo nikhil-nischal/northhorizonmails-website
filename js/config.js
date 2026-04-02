@@ -20,6 +20,6 @@ const CONFIG = {
   },
 
   // ── Support / contact ───────────────────────
-  supportEmail: 'support@northhorizonmails.com',
+  supportEmail: typeof CONTACT !== 'undefined' ? CONTACT.email.label : 'info@northhorizonmails.com',
 
 };

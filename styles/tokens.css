@@ -44,6 +44,13 @@
   /* ── Typography ──────────────────────────── */
   --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --font-sans:  'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --heading-weight: 600;
+  --h1-line-height: 0.96;
+  --h1-letter-spacing: -0.05em;
+  --h2-line-height: 1.02;
+  --h2-letter-spacing: -0.04em;
+  --h3-line-height: 1.18;
 
   /* ── Sizing ──────────────────────────────── */
   --max-w:      1200px;

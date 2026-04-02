@@ -50,19 +50,20 @@ button {
 
 /* ── Headings ── */
 h1, h2 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.1;
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
 }
 
 h1 {
   font-size: clamp(36px, 5vw, 68px);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
 }
 
 h2 {
   font-size: clamp(30px, 3.8vw, 52px);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--h2-letter-spacing);
+  line-height: var(--h2-line-height);
 }
 
 /* ── Section tag ── */

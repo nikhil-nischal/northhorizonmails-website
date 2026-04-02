@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — NorthHorizonMails</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/animations.css" />
@@ -80,7 +81,7 @@
         <div class="article-section" id="overview">
           <h2>1. Overview</h2>
           <p>NorthHorizonMails ("we," "our," "us") is committed to protecting the privacy of our customers and website visitors. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
-          <p>By using our website or services, you agree to the practices described in this policy. If you have questions, please contact us at <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a>.</p>
+          <p>By using our website or services, you agree to the practices described in this policy. If you have questions, please contact us at <a href="#" data-contact-email>Contact Email</a>.</p>
         </div>
 
         <div class="article-section" id="info-we-collect">
@@ -159,7 +160,7 @@
             <li><strong>Portability:</strong> Request your data in a machine-readable format.</li>
             <li><strong>Objection:</strong> Object to certain processing activities.</li>
           </ul>
-          <p>To exercise any of these rights, email us at <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a> with the subject line "Privacy Request." We will respond within 30 days.</p>
+          <p>To exercise any of these rights, email us at <a href="#" data-contact-email>Contact Email</a> with the subject line "Privacy Request." We will respond within 30 days.</p>
         </div>
 
         <div class="article-section" id="security">
@@ -180,7 +181,7 @@
         <div class="article-section" id="contact">
           <h2>11. Contact</h2>
           <p>For privacy-related questions, requests, or concerns:</p>
-          <p><strong>Email:</strong> <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a></p>
+          <p><strong>Email:</strong> <a href="#" data-contact-email>Contact Email</a></p>
           <p>We aim to respond to all privacy inquiries within 5 business days.</p>
         </div>
 
@@ -203,7 +204,13 @@
         <li><a href="guarantee.html">Guarantee</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
       </ul>
-      <div class="footer-contact">Contact: <a href="mailto:support@northhorizonmails.com">support@northhorizonmails.com</a></div>
+      <div class="footer-contact">
+        <span class="footer-contact-label">Contact</span>
+        <div class="footer-contact-links">
+          <a href="#" class="footer-contact-email" data-contact-email>Contact Email</a>
+          <a href="#" class="footer-contact-whatsapp" data-contact-whatsapp target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
       <ul class="footer-legal">
@@ -216,6 +223,7 @@
   </div>
 </footer>
 
+<script src="js/contact.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
 </body>

@@ -122,7 +122,7 @@ const COPY_INCLUDED = {
 
   pillar7_title: "Flexible Inbox Counts",
   pillar7_body:
-    "Not every campaign needs 99 inboxes. Choose 25, 49, 74, or 99 inboxes per domain based on your volume needs. Scale up or down as your campaigns evolve.",
+    "Not every campaign needs 99 inboxes. Choose 25, 49, 74, or 99 mailboxes/domain based on your volume needs. Scale up or down as your campaigns evolve.",
 };
 
 
@@ -144,7 +144,7 @@ const COPY_HOW_IT_WORKS = {
 
   step1_title: "Pick your plan",
   step1_body:
-    "Choose Normal, Premium, or Mixed. Select how many domains you need and how many inboxes per domain (25, 49, 74, or 99).",
+    "Choose Normal, Premium, or Mixed. Select how many domains you need and how many mailboxes/domain (25, 49, 74, or 99).",
 
   step2_title: "We build your infrastructure (24-48 hrs)",
   step2_body:
@@ -174,14 +174,14 @@ const COPY_PRICING = {
     "Simple pricing. No hidden fees. Choose your inbox count.",
 
   subheadline:
-    "Complete setup included. DNS, authentication, Instantly or Plusvibe connection. Every plan. Every domain. Choose 25, 49, 74, or 99 inboxes per domain.",
+    "Complete setup included. DNS, authentication, Instantly or Plusvibe connection. Every plan. Every domain. Choose 25, 49, 74, or 99 mailboxes/domain.",
 
   // ── Plan 1: Normal ──────────────────────────────
   normal_label:   "Normal License",
   normal_price:   "$45",
   normal_period:  "per domain / month",
   normal_features: [
-    "25, 49, 74, or 99 Inboxes per domain",
+    "25, 49, 74, or 99 Mailboxes/domain",
     "4-5 cold emails safely per inbox/day",
     "500+ emails/day sending volume per domain",
     "Complete Technical Setup (SPF, DKIM, DMARC)",
@@ -200,7 +200,7 @@ const COPY_PRICING = {
   mixed_period:  "per domain / month",
   mixed_note:    "50 Normal + 50 Premium Outlook licenses",
   mixed_features: [
-    "25, 49, 74, or 99 Inboxes per domain (split between Normal and Premium)",
+    "25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)",
     "500+ emails/day sending volume per domain",
     "Complete Technical Setup (SPF, DKIM, DMARC)",
     "Free Domain Replacement",
@@ -218,7 +218,7 @@ const COPY_PRICING = {
   premium_price:      "$65",
   premium_period:     "per domain / month",
   premium_features: [
-    "25, 49, 74, or 99 Inboxes per domain",
+    "25, 49, 74, or 99 Mailboxes/domain",
     "8-10 cold emails safely per inbox/day",
     "500+ emails/day sending volume per domain",
     "Complete Technical Setup (SPF, DKIM, DMARC)",
@@ -237,7 +237,7 @@ const COPY_PRICING = {
   custom_price:   "Custom",
   custom_period:  "For operators managing 100+ domains",
   custom_features: [
-    "25, 49, 74, or 99 Inboxes per domain",
+    "25, 49, 74, or 99 Mailboxes/domain",
     "Custom volume configuration",
     "Complete Technical Setup",
     "Free Domain Replacement",
@@ -275,7 +275,7 @@ const COPY_COMPARISON = {
 
   // Table rows: [feature label, normal value, premium value]
   tableRows: [
-    ["Inbox options",             "25, 49, 74, or 99",                     "25, 49, 74, or 99"],
+    ["Mailbox options",           "25, 49, 74, or 99",                     "25, 49, 74, or 99"],
     ["Cost per inbox (at 99)",    "~$0.45",                                "~$0.66"],
     ["Cold sends per inbox/day",  "3–5",                                   "8–10"],
     ["Warmup time",               "3–5 days",                              "3–5 days"],
@@ -390,7 +390,7 @@ const COPY_FAQ = {
   a1:  "Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 24-48 hours.",
 
   q2:  "Can I choose how many inboxes I want per domain?",
-  a2:  "Yes. Every plan lets you choose 25, 49, 74, or 99 inboxes per domain. Pick based on your campaign volume needs.",
+  a2:  "Yes. Every plan lets you choose 25, 49, 74, or 99 mailboxes/domain. Pick based on your campaign volume needs.",
 
   q3:  "Can I use my own domains?",
   a3:  "Yes. Bring your own or purchase our verified domains. The deliverability guarantee requires our verified domains.",
@@ -460,7 +460,7 @@ const COPY_FOOTER = {
     "FAQ",
   ],
 
-  contactLabel: "support@northhorizonmails.com",
+  contactLabel: CONTACT.email.label,
 
   legalLinks: [
     "Terms of Service",

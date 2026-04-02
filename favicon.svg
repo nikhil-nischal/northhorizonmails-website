@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="North Horizon Mails">
+  <rect width="64" height="64" rx="16" fill="#07091A"/>
+  <path d="M18 46V18L46 46V18" fill="none" stroke="#F8FAFC" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M14 50H50" fill="none" stroke="#2563EB" stroke-linecap="round" stroke-width="4"/>
+</svg>

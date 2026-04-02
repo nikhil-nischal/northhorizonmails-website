@@ -9,6 +9,9 @@
    The navbar and footer cannot be hidden.
 ════════════════════════════════════════════ */
 
+const CONTACT_EMAIL = CONTACT.email;
+const CONTACT_WHATSAPP = CONTACT.whatsapp;
+
 const CONTENT = {
 
   // ── NAVBAR ──────────────────────────────────
@@ -36,8 +39,13 @@ const CONTENT = {
 
   // ── TRUST BAR ───────────────────────────────
   trust: {
-    visible: true,
+    visible: false,
     label: 'Powering outbound for cold email operators sending at scale',
+    logos: [
+      // Example:
+      { label: 'Instantly', href: 'https://instantly.ai' },
+      { alt: 'Smartlead', src: 'images/smartlead.svg', href: 'https://www.smartlead.ai' },
+    ],
   },
 
   // ── THE PROBLEM ─────────────────────────────
@@ -76,6 +84,10 @@ const CONTENT = {
         body:  'Domain gets burned? We replace it. No extra charge. No questions. Operators scale aggressively and we built our system to handle that reality.',
       },
       {
+        title: 'Aged Domain Support',
+        body:  'Need stronger domain quality from day one? We help you source 10+ year aged domains with a 10+ infrastructure score, giving you a cleaner foundation for deliverability.',
+      },
+      {
         title: '15+ Sending Tool Compatibility',
         body:  'Instantly, Smartlead, Salesforge, or any SMTP-compatible platform. White-glove setup is available for Instantly and Plusvibe. Contact us to add other tools.',
       },
@@ -86,7 +98,11 @@ const CONTENT = {
       },
       {
         title: 'Flexible Inbox Counts',
-        body:  'Not every campaign needs 99 inboxes. Choose 25, 49, 74, or 99 inboxes per domain based on your volume needs. Scale up or down as your campaigns evolve.',
+        body:  'Not every campaign needs 99 inboxes. Choose 25, 49, 74, or 99 mailboxes/domain based on your volume needs. Scale up or down as your campaigns evolve.',
+      },
+      {
+        title: 'Buy 11, Get 1 Free',
+        body:  'Scaling volume? For every 11 domains you buy, we add 1 more at no extra cost. Simple pricing for operators growing fast.',
       },
     ],
   },
@@ -106,7 +122,7 @@ const CONTENT = {
       {
         n:     '1',
         title: 'Pick your plan',
-        body:  'Choose Normal, Premium, or Mixed. Select how many domains you need and how many inboxes per domain (25, 49, 74, or 99).',
+        body:  'Choose Normal, Premium, or Mixed. Select how many domains you need and how many mailboxes/domain (25, 49, 74, or 99).',
       },
       {
         n:     '2',
@@ -129,9 +145,14 @@ const CONTENT = {
 
   // ── PRICING ─────────────────────────────────
   pricing: {
+    visible:      true,
     tag:          'Pricing',
     headline:     'Simple pricing. No hidden fees. Choose your inbox count.',
-    subheadline:  'Complete setup included. DNS, authentication, Instantly or Plusvibe connection. Every plan. Every domain. Choose 25, 49, 74, or 99 inboxes per domain.',
+    subheadline:  'Complete setup included. DNS, authentication, Instantly or Plusvibe connection. Every plan. Every domain. Choose 25, 49, 74, or 99 mailboxes/domain.',
+    bestForSection: {
+      tag:      'Quick guide',
+      headline: 'Choose the plan that matches how you send.',
+    },
 
     // ORDER: Normal → Mixed → Premium → Custom
     plans: [
@@ -139,16 +160,16 @@ const CONTENT = {
         id:       'normal',
         label:    'Normal License',
         price:    '$45',
-        period:   'per domain / month',
+        note:     '100% Normal licenses',
+        period:   'per domain every 4 weeks',
         features: [
-          '25, 49, 74, or 99 Inboxes per domain',
+          '25, 49, 74, or 99 Mailboxes/domain',
           '4-5 cold emails safely per inbox/day',
           '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Individual US Microsoft Tenants',
           '15+ Sending Tool Integration',
-          'Intercom Chat Support',
         ],
         bestFor: 'Best for: Volume campaigns where cost per lead matters most',
         cta:     { label: 'Order Normal', href: '#' },
@@ -157,16 +178,15 @@ const CONTENT = {
         id:       'mixed',
         label:    'Mixed License',
         price:    '$55',
-        period:   'per domain / month',
-        note:     '50 Normal + 50 Premium Outlook licenses',
+        period:   'per domain every 4 weeks',
+        note:     '50% Normal + 50% Premium licenses',
         features: [
-          '25, 49, 74, or 99 Inboxes per domain (split between Normal and Premium)',
+          '25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)',
           '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Individual US Microsoft Tenants',
           '15+ Sending Tool Integration',
-          'Intercom Chat Support',
         ],
         bestFor: 'Best for: Operators who want both volume and quality in one domain',
         cta:     { label: 'Order Mixed', href: '#' },
@@ -175,20 +195,20 @@ const CONTENT = {
         id:       'premium',
         label:    'Premium License',
         price:    '$65',
-        period:   'per domain / month',
+        note:     '100% Premium licenses',
+        period:   'per domain every 4 weeks',
         featured: true,
         features: [
-          '25, 49, 74, or 99 Inboxes per domain',
+          '25, 49, 74, or 99 Mailboxes/domain',
           '8-10 cold emails safely per inbox/day',
           '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Individual US Microsoft Tenants',
-          'Premium infrastructure with higher-tier Microsoft licensing',
+          'Separate premium Microsoft infrastructure with higher-quality licensing',
           '15+ Sending Tool Integration',
-          'Intercom Chat Support',
         ],
-        bestFor: 'Best for: High-value ICP campaigns where every reply matters. Premium runs on a separate, higher-quality Microsoft infrastructure that most cold emailers never use, which means cleaner IP pools, less spam association, and better inbox placement.',
+        bestFor: 'Best for: High-value campaigns where deliverability quality matters most. Premium runs on separate, higher-quality Microsoft infrastructure that far fewer cold emailers use, giving you cleaner sending conditions and stronger inbox placement.',
         cta:     { label: 'Order Premium', href: '#' },
       },
       {
@@ -196,51 +216,48 @@ const CONTENT = {
         label:    'Custom Plan',
         price:    'Custom',
         period:   'For operators managing 100+ domains',
-        features: [
-          '25, 49, 74, or 99 Inboxes per domain',
-          'Custom volume configuration',
-          'Complete Technical Setup',
-          'Free Domain Replacement',
-          'Individual US Microsoft Tenants',
-          '15+ Sending Tool Integration',
-          'Dedicated Account Manager',
-          'Slack 1:1 Support',
-        ],
+        features: [],
         bestFor: 'Best for: Agencies running large-scale multi-client campaigns',
-        cta:     { label: 'Contact Us', href: '#' },
+        cta:     {
+          label: 'Contact Us',
+          href: CONTACT_EMAIL.href,
+          copyText: CONTACT_EMAIL.copyText,
+          copyOnly: true,
+        },
       },
     ],
 
     volumeBonus: {
-      title: 'Volume Bonus: Buy 11, get 12',
+      title: 'Volume Bonus: Buy 11, get 1 FREE',
       body:  'Running at scale? Every 11 domains you purchase comes with a free one. Simple volume reward for operators scaling up.',
     },
     guaranteeAddon: {
-      title: 'Deliverability Guarantee Add-On — $10/domain/month',
+      title: 'Deliverability Guarantee Add-On — $10/domain every 4 weeks',
       body:  "Add to any plan. Requires 2-week warmup (launch in week 3 instead of week 2). If deliverability doesn't perform after following our system, we refund 50% of your domain costs. Details below.",
     },
   },
 
   // ── COMPARISON ──────────────────────────────
   comparison: {
+    visible:  true,
     tag:      'Choosing a license',
     headline: "Not sure which license? Here's the honest breakdown.",
     rows: [
-      { feature: 'Inbox options',             normal: '25, 49, 74, or 99',                          premium: '25, 49, 74, or 99' },
+      { feature: 'Mailbox options',           normal: '25, 49, 74, or 99',                          premium: '25, 49, 74, or 99' },
       { feature: 'Cost per inbox (at 99)',    normal: '~$0.45',                                     premium: '~$0.66' },
       { feature: 'Cold sends per inbox/day',  normal: '3–5',                                        premium: '8–10' },
       { feature: 'Warmup time',               normal: '3–5 days',                                   premium: '3–5 days' },
       { feature: 'Deliverability',            normal: 'Good',                                       premium: 'Excellent' },
       { feature: 'Spam filter intelligence',  normal: 'High',                                       premium: 'Highest (strictest)' },
-      { feature: 'Infrastructure',            normal: 'Microsoft Azure',                            premium: 'Microsoft Azure (higher-tier)' },
+      { feature: 'Infrastructure',            normal: 'Microsoft Azure',                            premium: 'Separate premium Microsoft infrastructure' },
       { feature: 'IP Reputation',             normal: 'Bulletproof',                               premium: 'Bulletproof' },
-      { feature: 'IP Pool Quality',           normal: 'Standard',                                   premium: 'Cleaner, less saturated by cold emailers' },
+      { feature: 'IP Pool Quality',           normal: 'Standard',                                   premium: 'Cleaner, less crowded, and less used by cold emailers' },
       { feature: 'Best for',                  normal: 'Budget volume plays',                        premium: 'Trusted high-value sends' },
     ],
     recommendations: [
       {
         label: 'Go Premium if…',
-        body:  "Sending to mid-market or enterprise ICPs where reply quality matters? Go Premium. The infrastructure is a different, higher-quality Microsoft license that most cold emailers don't use, which means you're sending from cleaner IP pools with less spam history. Your emails land where they should.",
+        body:  "Go Premium when deliverability quality matters more than lowest-cost volume. It runs on separate, higher-quality Microsoft infrastructure that far fewer cold emailers use, which means cleaner sending conditions, better inbox placement, and stronger reply potential.",
       },
       {
         label: 'Go Normal if…',
@@ -255,9 +272,10 @@ const CONTENT = {
 
   // ── GUARANTEE ───────────────────────────────
   guarantee: {
+    visible:     true,
     tag:         'The guarantee',
     headline:    "We built infrastructure we're willing to bet on.",
-    subheadline: 'Add the Deliverability Guarantee to any plan for $10/domain/month.',
+    subheadline: 'Add the Deliverability Guarantee to any plan for $10/domain every 4 weeks.',
     intro:       "Every inbox provider tells you their infrastructure is solid. We're the only one that puts money behind it.",
     conditionsIntro: 'The conditions are straightforward:',
     conditions: [
@@ -277,6 +295,7 @@ const CONTENT = {
 
   // ── TESTIMONIALS ────────────────────────────
   testimonials: {
+    visible:  false,
     tag:      'From operators who switched',
     headline: 'They tried other providers first. Then they found us.',
     items: [
@@ -303,6 +322,7 @@ const CONTENT = {
 
   // ── FAQ ─────────────────────────────────────
   faq: {
+    visible:  true,
     tag:      'FAQ',
     headline: 'Answers before you ask.',
     items: [
@@ -312,7 +332,7 @@ const CONTENT = {
       },
       {
         q: 'Can I choose how many inboxes I want per domain?',
-        a: 'Yes. Every plan lets you choose 25, 49, 74, or 99 inboxes per domain. Pick based on your campaign volume needs.',
+        a: 'Yes. Every plan lets you choose 25, 49, 74, or 99 mailboxes/domain. Pick based on your campaign volume needs.',
       },
       {
         q: 'Can I use my own domains?',
@@ -336,7 +356,7 @@ const CONTENT = {
       },
       {
         q: 'How does the guarantee work exactly?',
-        a: "$10/domain/month add-on. Use our verified domains, warm for 2 weeks (instead of the standard 1 week), launch in week 3, stay in suggested limits, keep copy clean. If deliverability doesn't perform, 50% refund on domain costs.",
+        a: "$10/domain every 4 weeks add-on. Use our verified domains, warm for 2 weeks (instead of the standard 1 week), launch in week 3, stay in suggested limits, keep copy clean. If deliverability doesn't perform, 50% refund on domain costs.",
       },
       {
         q: 'How fast can I start sending?',
@@ -359,6 +379,7 @@ const CONTENT = {
 
   // ── FINAL CTA ───────────────────────────────
   finalCta: {
+    visible:     true,
     headline:    "Stop gambling on infrastructure that doesn't guarantee anything.",
     subheadline: "Premium Outlook inboxes. White-glove setup. The only provider willing to refund you if deliverability doesn't perform.",
     cta:   { label: 'Get Started', href: '#pricing' },
@@ -376,8 +397,13 @@ const CONTENT = {
       { label: 'FAQ',          href: '#faq'           },
     ],
     contact: {
-      label: 'support@northhorizonmails.com',
-      href:  'mailto:support@northhorizonmails.com',
+      label:    CONTACT_EMAIL.label,
+      href:     CONTACT_EMAIL.href,
+      copyText: CONTACT_EMAIL.copyText,
+    },
+    whatsapp: {
+      label: CONTACT_WHATSAPP.label,
+      href:  CONTACT_WHATSAPP.href,
     },
     legal: [
       { label: 'Terms of Service', href: 'terms.html'   },
