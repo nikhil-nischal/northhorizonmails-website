@@ -9,8 +9,8 @@
    The navbar and footer cannot be hidden.
 ════════════════════════════════════════════ */
 
-const CONTACT_EMAIL = CONTACT.email;
-const CONTACT_WHATSAPP = CONTACT.whatsapp;
+const CONTENT_CONTACT_EMAIL = typeof CONTACT !== 'undefined' ? CONTACT.email : null;
+const CONTENT_CONTACT_WHATSAPP = typeof CONTACT !== 'undefined' ? CONTACT.whatsapp : null;
 
 const CONTENT = {
 
@@ -220,8 +220,8 @@ const CONTENT = {
         bestFor: 'Best for: Agencies running large-scale multi-client campaigns',
         cta:     {
           label: 'Contact Us',
-          href: CONTACT_EMAIL.href,
-          copyText: CONTACT_EMAIL.copyText,
+          href: CONTENT_CONTACT_EMAIL?.href || '#',
+          copyText: CONTENT_CONTACT_EMAIL?.copyText,
           copyOnly: true,
         },
       },
@@ -397,13 +397,13 @@ const CONTENT = {
       { label: 'FAQ',          href: '#faq'           },
     ],
     contact: {
-      label:    CONTACT_EMAIL.label,
-      href:     CONTACT_EMAIL.href,
-      copyText: CONTACT_EMAIL.copyText,
+      label:    CONTENT_CONTACT_EMAIL?.label || '',
+      href:     CONTENT_CONTACT_EMAIL?.href || '#',
+      copyText: CONTENT_CONTACT_EMAIL?.copyText,
     },
     whatsapp: {
-      label: CONTACT_WHATSAPP.label,
-      href:  CONTACT_WHATSAPP.href,
+      label: CONTENT_CONTACT_WHATSAPP?.label || 'WhatsApp',
+      href:  CONTENT_CONTACT_WHATSAPP?.href || '#',
     },
     legal: [
       { label: 'Terms of Service', href: 'terms.html'   },
@@ -414,3 +414,48 @@ const CONTENT = {
   },
 
 };
+
+globalThis.CONTENT = CONTENT;
+
+function contentSectionId(key) {
+  const ids = {
+    hero: 'hero',
+    trust: 'trust',
+    problem: 'problem',
+    included: 'included',
+    howItWorks: 'how-it-works',
+    pricing: 'pricing',
+    comparison: 'comparison',
+    guarantee: 'guarantee',
+    testimonials: 'testimonials',
+    faq: 'faq',
+    finalCta: 'final-cta',
+  };
+
+  return ids[key];
+}
+
+function syncContentVisibility(content) {
+  Object.keys(content).forEach((key) => {
+    const sectionId = contentSectionId(key);
+    const sectionContent = content[key];
+
+    if (!sectionId || !sectionContent || !Object.prototype.hasOwnProperty.call(sectionContent, 'visible')) {
+      return;
+    }
+
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    section.hidden = !sectionContent.visible;
+    section.style.display = sectionContent.visible ? '' : 'none';
+  });
+}
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => syncContentVisibility(CONTENT), { once: true });
+  } else {
+    syncContentVisibility(CONTENT);
+  }
+}

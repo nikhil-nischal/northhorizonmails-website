@@ -115,15 +115,15 @@ function createCheckIcon() {
 }
 
 function stripePaymentConfig(planId) {
-  if (typeof PAYMENT_LINKS === 'undefined') return null;
-  const config = PAYMENT_LINKS[planId];
+  const links = globalThis.PAYMENT_LINKS;
+  if (!links) return null;
+  const config = links[planId];
   if (!config?.buyButtonId || !config?.publishableKey) return null;
   return config;
 }
 
 function contactConfig() {
-  if (typeof CONTACT === 'undefined') return null;
-  return CONTACT;
+  return globalThis.CONTACT || null;
 }
 
 function applySharedContactDetails() {
@@ -295,12 +295,13 @@ function comparisonColumnLabel(plan) {
 }
 
 function applyHomeContent() {
-  if (typeof CONTENT === 'undefined') return;
+  const content = globalThis.CONTENT;
+  if (!content) return;
   if (!document.getElementById('hero')) return;
 
-  applySectionVisibility(CONTENT);
+  applySectionVisibility(content);
 
-  const { navbar, hero, trust, problem, included, howItWorks, pricing, comparison, guarantee, testimonials, faq, finalCta, footer } = CONTENT;
+  const { navbar, hero, trust, problem, included, howItWorks, pricing, comparison, guarantee, testimonials, faq, finalCta, footer } = content;
 
   if (navbar) {
     setText(document.querySelector('#navbar .nav-logo .logo-top'), navbar.logoTop);
@@ -859,14 +860,15 @@ document.addEventListener('DOMContentLoaded', () => {
   applyHomeContent();
 
   // ── 2. Apply config: testimonials visibility ──
-  if (typeof CONFIG !== 'undefined' && !CONFIG.showTestimonials) {
+  const config = globalThis.CONFIG;
+  if (config && !config.showTestimonials) {
     const t = document.getElementById('testimonials');
     if (t) t.style.display = 'none';
   }
 
   // ── 3. Apply Stripe links from config ────────
-  if (typeof CONFIG !== 'undefined' && CONFIG.stripeLinks) {
-    Object.entries(CONFIG.stripeLinks).forEach(([plan, url]) => {
+  if (config?.stripeLinks) {
+    Object.entries(config.stripeLinks).forEach(([plan, url]) => {
       const card = document.querySelector(`[data-plan="${plan}"]`);
       if (card && url && url !== '#') {
         const btn = card.querySelector('.btn');
