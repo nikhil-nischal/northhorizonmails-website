@@ -27,6 +27,29 @@
   margin-bottom: 22px;
 }
 
+.problem-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+.problem-bullets li {
+  font-size: 17.5px;
+  line-height: 1.84;
+  color: var(--dark-text);
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.problem-bullets li:last-child {
+  margin-bottom: 0;
+}
+.problem-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--dark-accent);
+}
+
 .problem-closer {
   font-size: 19px !important;
   font-weight: 600 !important;

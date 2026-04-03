@@ -68,6 +68,28 @@
   color: var(--text-muted);
   line-height: 1.74;
 }
+.pillar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pillar li {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.74;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 5px;
+}
+.pillar li:last-child {
+  margin-bottom: 0;
+}
+.pillar li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
 
 .pillar-badge {
   display: inline-block;
