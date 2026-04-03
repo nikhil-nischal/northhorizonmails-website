@@ -7,17 +7,17 @@
 
 const PAYMENT_LINKS = {
   normal: {
-    buyButtonId: 'buy_btn_1THjXH3tg3mEQejNCULsQdnM',
+    buyButtonId: 'buy_btn_1THzGY3tg3mEQejNIm5t0hbv',
     publishableKey: 'pk_live_51S0OHL3tg3mEQejNLa44wWx0hdihd7EM6ELxXv2ZxdzqfJI58jzxPaI5xKBFRccLNMlfwPQYsSqUKECa6K2w4I2800vueLokCP',
   },
 
   mixed: {
-    buyButtonId: 'buy_btn_1THjXH3tg3mEQejNCULsQdnM',
+    buyButtonId: 'buy_btn_1TIBjz3tg3mEQejNiQraUGTX',
     publishableKey: 'pk_live_51S0OHL3tg3mEQejNLa44wWx0hdihd7EM6ELxXv2ZxdzqfJI58jzxPaI5xKBFRccLNMlfwPQYsSqUKECa6K2w4I2800vueLokCP',
   },
 
   premium: {
-    buyButtonId: 'buy_btn_1THjXH3tg3mEQejNCULsQdnM',
+    buyButtonId: 'buy_btn_1TIBl73tg3mEQejNmPGuqMVX',
     publishableKey: 'pk_live_51S0OHL3tg3mEQejNLa44wWx0hdihd7EM6ELxXv2ZxdzqfJI58jzxPaI5xKBFRccLNMlfwPQYsSqUKECa6K2w4I2800vueLokCP',
   },
 
