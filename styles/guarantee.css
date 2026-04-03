@@ -103,6 +103,28 @@
   color: var(--dark-text-muted);
   line-height: 1.78;
 }
+.g-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.g-box li {
+  font-size: 14px;
+  color: var(--dark-text-muted);
+  line-height: 1.78;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.g-box li:last-child {
+  margin-bottom: 0;
+}
+.g-box li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+}
 
 .g-sep {
   height: 1px;

@@ -16,21 +16,22 @@
   line-height: 1.15;
 }
 .footer-logo .logo-top {
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: white;
+  margin-bottom: 1px;
   text-align: center;
 }
 .footer-logo .logo-bottom {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: white;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
   text-align: center;
 }

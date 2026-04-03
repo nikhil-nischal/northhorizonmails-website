@@ -219,19 +219,36 @@ function createPricingCard(plan, index) {
   period.textContent = plan.period;
   card.appendChild(period);
 
-  if (plan.features?.length) {
+  const hasFeatures = plan.uniqueFeatures?.length || plan.features?.length;
+  if (hasFeatures) {
     const divider = document.createElement('div');
     divider.className = 'c-div';
     card.appendChild(divider);
 
     const features = document.createElement('ul');
     features.className = 'plan-feats';
-    plan.features.forEach((feature) => {
-      const item = document.createElement('li');
-      item.appendChild(createCheckIcon());
-      item.appendChild(document.createTextNode(feature));
-      features.appendChild(item);
-    });
+
+    if (plan.uniqueFeatures?.length) {
+      plan.uniqueFeatures.forEach((feature) => {
+        const item = document.createElement('li');
+        item.className = 'feat-unique';
+        const chk = createCheckIcon();
+        chk.classList.add('chk-unique');
+        item.appendChild(chk);
+        item.appendChild(document.createTextNode(feature));
+        features.appendChild(item);
+      });
+    }
+
+    if (plan.features?.length) {
+      plan.features.forEach((feature) => {
+        const item = document.createElement('li');
+        item.appendChild(createCheckIcon());
+        item.appendChild(document.createTextNode(feature));
+        features.appendChild(item);
+      });
+    }
+
     card.appendChild(features);
   }
 
@@ -258,6 +275,13 @@ function createPricingCard(plan, index) {
       button.dataset.copyOnly = plan.cta.copyOnly ? 'true' : 'false';
     }
     card.appendChild(button);
+  }
+
+  if (plan.ctaTag) {
+    const ctaTag = document.createElement('p');
+    ctaTag.className = 'plan-cta-tag';
+    ctaTag.textContent = plan.ctaTag;
+    card.appendChild(ctaTag);
   }
 
   return card;
@@ -292,6 +316,21 @@ function comparisonColumnLabel(plan) {
   if (!plan) return '';
   const label = plan.label.replace(/\s+(License|Plan)$/u, '');
   return `${label} (${plan.price}/mo)`;
+}
+
+function createBodyContent(value) {
+  if (Array.isArray(value)) {
+    const ul = document.createElement('ul');
+    value.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+  const p = document.createElement('p');
+  p.textContent = value ?? '';
+  return p;
 }
 
 function applyHomeContent() {
@@ -374,12 +413,14 @@ function applyHomeContent() {
       heading.textContent = problem.headline;
       container.appendChild(heading);
 
-      problem.body.forEach((paragraph, index) => {
-        const p = document.createElement('p');
-        p.className = `fi ${delayClass(index + 1)}`.trim();
-        p.textContent = paragraph;
-        container.appendChild(p);
+      const problemList = document.createElement('ul');
+      problemList.className = 'problem-bullets fi d1';
+      problem.body.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        problemList.appendChild(li);
       });
+      container.appendChild(problemList);
 
       const closer = document.createElement('p');
       closer.className = 'problem-closer fi d3';
@@ -421,9 +462,7 @@ function applyHomeContent() {
         }
         item.appendChild(title);
 
-        const body = document.createElement('p');
-        body.textContent = pillar.body;
-        item.appendChild(body);
+        item.appendChild(createBodyContent(pillar.body));
 
         pillars.appendChild(item);
       });
@@ -484,9 +523,7 @@ function applyHomeContent() {
         title.textContent = step.title;
         body.appendChild(title);
 
-        const copy = document.createElement('p');
-        copy.textContent = step.body;
-        body.appendChild(copy);
+        body.appendChild(createBodyContent(step.body));
 
         item.appendChild(body);
         steps.appendChild(item);
@@ -683,7 +720,13 @@ function applyHomeContent() {
     const boxes = document.querySelectorAll('#guarantee .g-box');
     if (boxes[0]) {
       setText(boxes[0].querySelector('h3'), guarantee.whyTitle);
-      setText(boxes[0].querySelector('p'), guarantee.why);
+      const whyEl = boxes[0].querySelector('p');
+      if (Array.isArray(guarantee.why)) {
+        const ul = createBodyContent(guarantee.why);
+        if (whyEl) whyEl.replaceWith(ul); else boxes[0].appendChild(ul);
+      } else {
+        setText(whyEl, guarantee.why);
+      }
     }
     if (boxes[1]) {
       setText(boxes[1].querySelector('h3'), guarantee.timingTitle);
