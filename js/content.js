@@ -76,13 +76,6 @@ const CONTENT = {
         ],
       },
       {
-        title: 'Aged Domain Support',
-        body:  [
-          'We source 10+ year aged domains with a 10+ infrastructure score.',
-          'Cleaner deliverability foundation from day one.',
-        ],
-      },
-      {
         title: 'Complete DNS & Authentication',
         body:  [
           'SPF, DKIM, and DMARC fully configured before delivery.',
@@ -91,11 +84,17 @@ const CONTENT = {
         ],
       },
       {
-        title: 'White-Glove Setup',
+        title: 'Aged Domain Support',
         body:  [
-          'We connect every inbox directly into your Instantly or Plusvibe account.',
-          'No manual imports. No SMTP headaches.',
-          'Contact us to add other platforms.',
+          'We source 10+ year aged domains with a 10+ infrastructure score.',
+          'Cleaner deliverability foundation from day one.',
+        ],
+      },
+      {
+        title: '24-48 Hour Delivery',
+        body:  [
+          'Tenants provisioned, DNS configured, inboxes connected within 24-48 hours.',
+          'You order, we build, you warm up.',
         ],
       },
       {
@@ -113,26 +112,27 @@ const CONTENT = {
         ],
       },
       {
+        title: 'Custom Profile Pictures',
+        body:  [
+          'Set real profile pictures on every mailbox',
+          'Emails with profile photos look human and build trust',
+          'Higher open rates and reply rates',
+        ],
+      },
+      {
+        title: 'Mailbox Access',
+        body:  [
+          'Access your mailboxes to reply directly from the inbox',
+          "Useful when earlier conversations aren't accessible in your email outreach software",
+        ],
+      },
+      {
         title: 'Deliverability Guarantee',
         badge: '$5/domain add-on',
         body:  [
-          'Follow our system — 2-week warmup, verified domains, clean copy.',
-          "If deliverability still doesn't perform, we refund 50% of domain costs.",
-          'Available on orders of 5 or more domains.',
-        ],
-      },
-      {
-        title: 'Flexible Inbox Counts',
-        body:  [
-          'Choose 25, 49, 74, or 99 mailboxes per domain.',
-          'Scale up or down as your campaigns evolve.',
-        ],
-      },
-      {
-        title: '24-48 Hour Delivery',
-        body:  [
-          'Tenants provisioned, DNS configured, inboxes connected within 24-48 hours.',
-          'You order, we build, you warm up.',
+          'Follow our system — verified domains, 2-week warmup, clean copy.',
+          'Available on orders of 6 or more domains, with the guarantee valid only during week 3.',
+          "If deliverability still doesn't perform in week 3, request your refund that week and we refund 50% of the subscription fees we charged.",
         ],
       },
     ],
@@ -183,7 +183,7 @@ const CONTENT = {
         ],
       },
     ],
-    note: "Most operators order on Friday and are warming up by Monday. By next monday, campaigns are live and landing replies.",
+    note: "Most operators order on Friday and are warming up by Monday. Without the guarantee, campaigns are live in week 2. With the guarantee, warmup runs for 2 full weeks, launch happens in week 3, and the refund window applies only during that week.",
   },
 
   // ── PRICING ─────────────────────────────────
@@ -192,10 +192,6 @@ const CONTENT = {
     tag:          'Pricing',
     headline:     'Simple pricing. No hidden fees. Choose your inbox count.',
     subheadline:  'Complete setup included. DNS, authentication, Instantly or Plusvibe connection. Every plan. Every domain. Choose 25, 49, 74, or 99 mailboxes/domain.',
-    bestForSection: {
-      tag:      'Quick guide',
-      headline: 'Choose the plan that matches how you send.',
-    },
 
     // ORDER: Normal → Mixed → Premium → Custom
     plans: [
@@ -203,7 +199,7 @@ const CONTENT = {
         id:       'normal',
         label:    'Normal License',
         price:    '$45',
-        note:     '100% Normal licenses',
+        note:     'All Outlook licenses',
         period:   'per domain every 4 weeks',
         uniqueFeatures: [
           '4-5 cold emails safely per inbox/day',
@@ -215,34 +211,36 @@ const CONTENT = {
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
           'Individual US Microsoft Tenants',
+          'Mailbox access to reply directly',
           '15+ Sending Tool Integration',
         ],
-        bestFor: 'Best for: Volume campaigns where cost per lead matters most',
-        ctaTag:  'Best for volume campaigns',
+        ctaTag:    'Best for volume campaigns',
+        ctaDetail: 'Built for operators who care most about keeping cost per lead low while staying on the same Azure-backed setup.',
         cta:     { label: 'Order Normal', href: '#' },
       },
       {
         id:       'premium',
         label:    'Premium License',
         price:    '$65',
-        note:     '100% Premium licenses',
+        note:     'All Premium Outlook licenses',
         period:   'per domain every 4 weeks',
         featured: true,
         uniqueFeatures: [
           '8-10 cold emails safely per inbox/day',
-          'Separate premium Microsoft infrastructure with higher-quality licensing',
+          'Higher-quality license less used by cold emailers',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
-          '500+ emails/day sending volume per domain',
+          '800+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
           'Individual US Microsoft Tenants',
+          'Mailbox access to reply directly',
           '15+ Sending Tool Integration',
         ],
-        bestFor: 'Best for: High-value campaigns where deliverability quality matters most. Premium runs on separate, higher-quality Microsoft infrastructure that far fewer cold emailers use, giving you cleaner sending conditions and stronger inbox placement.',
-        ctaTag:  'Best for high-value ICP campaigns',
+        ctaTag:    'Best for high-value ICP campaigns',
+        ctaDetail: 'Premium runs on higher-quality Microsoft infrastructure that fewer cold emailers use, giving you cleaner sending conditions and stronger inbox placement.',
         cta:     { label: 'Order Premium', href: '#' },
       },
       {
@@ -252,18 +250,20 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         note:     '50% Normal + 50% Premium licenses',
         uniqueFeatures: [
-          '25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)',
+          '4-5 cold emails safely per inbox/day',
         ],
         features: [
+          '25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)',
           '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
           'Individual US Microsoft Tenants',
+          'Mailbox access to reply directly',
           '15+ Sending Tool Integration',
         ],
-        bestFor: 'Best for: Operators who want both volume and quality in one domain',
-        ctaTag:  'Best of both in one domain',
+        ctaTag:    'Best of both in one domain',
+        ctaDetail: 'Designed for operators who want both volume and deliverability quality without splitting across separate domains.',
         cta:     { label: 'Order Mixed', href: '#' },
       },
       {
@@ -272,7 +272,8 @@ const CONTENT = {
         price:    'Custom',
         period:   'For operators managing 100+ domains',
         features: [],
-        bestFor: 'Best for: Agencies running large-scale multi-client campaigns',
+        ctaTag:    'Best for large-scale campaigns',
+        ctaDetail: 'For agencies and operators running 100+ domains or managing multi-client sending at scale.',
         cta:     {
           label: 'Contact Us',
           href: CONTENT_CONTACT_EMAIL?.href || '#',
@@ -287,8 +288,8 @@ const CONTENT = {
       body:  'Running at scale? Every 11 domains you purchase comes with a free one. Simple volume reward for operators scaling up.',
     },
     guaranteeAddon: {
-      title: 'Deliverability Guarantee Add-On — $5/domain every 4 weeks',
-      body:  "Add to any plan. Available on orders of 5 or more domains. Requires 2-week warmup (launch in week 3 instead of week 2). If deliverability doesn't perform after following our system, we refund 50% of your domain costs. Details below.",
+      title: 'Deliverability Guarantee Add-On — $5/domain one-time',
+      body:  'Add to any plan. Available on orders of 6 or more domains. Requires a full 2-week warmup, applies only during week 3, and refund requests must be submitted in week 3 after all criteria are met. Details below.',
     },
   },
 
@@ -330,7 +331,7 @@ const CONTENT = {
     visible:     true,
     tag:         'The guarantee',
     headline:    "We built infrastructure we're willing to bet on.",
-    subheadline: 'Add the Deliverability Guarantee to any plan for $5/domain every 4 weeks. Available on orders of 5 or more domains.',
+    subheadline: 'Add the Deliverability Guarantee to any plan for a one-time $5/domain. Available on orders of 6 or more domains.',
     intro:       "Every inbox provider tells you their infrastructure is solid. We're the only one that puts money behind it.",
     conditionsIntro: 'The conditions are straightforward:',
     conditions: [
@@ -340,7 +341,7 @@ const CONTENT = {
       'Stay within suggested daily sending limits',
       'No spam trigger words in your copy',
     ],
-    result:     "Follow every step. If deliverability still doesn't perform, we refund 50% of your domain costs.",
+    result:     'Follow every step. If deliverability still does not perform during week 3, submit your request that same week and we refund 50% of the subscription fees we charged.',
     whyTitle:   'Why we can offer this',
     why: [
       'Individual US-based Microsoft tenants on Azure.',
@@ -349,7 +350,7 @@ const CONTENT = {
       'We control the setup end-to-end, so we stand behind it end-to-end.',
     ],
     timingTitle:'Note on timing',
-    timing:     'The guarantee requires a 2-week warmup instead of the standard 1 week. This extra week ensures your domains build maximum sender reputation before you launch. You go live in week 3 instead of week 2.',
+    timing:     'The guarantee requires a 2-week warmup instead of the standard 1 week. You launch in week 3, the guarantee applies only during that week, and refund requests must be submitted in week 3 after all criteria are met.',
     disclaimer: 'This guarantee is for operators who follow the system. If you send 50 emails per inbox on day one with a subject line that says "ACT NOW!!!" that\'s not an infrastructure problem. We guarantee the foundation. You bring the discipline.',
   },
 
@@ -399,6 +400,14 @@ const CONTENT = {
         a: 'Yes. Bring your own or purchase our verified domains. The deliverability guarantee requires our verified domains.',
       },
       {
+        q: 'Can I set profile pictures on the mailboxes?',
+        a: 'Yes. Every mailbox comes with the ability to set a custom profile picture. This makes your outreach look more human and increases open and reply rates.',
+      },
+      {
+        q: 'Can I log into the mailboxes directly?',
+        a: "Yes. You get mailbox access to reply to emails directly from the inbox. This is especially helpful when earlier conversations aren't accessible in your outreach software.",
+      },
+      {
         q: 'How many cold emails can I send per inbox per day?',
         a: 'Normal: 4-5 per inbox/day. Premium: 8-10 per inbox/day. Stay within these to protect reputation and maximize inbox placement.',
       },
@@ -416,11 +425,11 @@ const CONTENT = {
       },
       {
         q: 'How does the guarantee work exactly?',
-        a: "$5/domain every 4 weeks add-on. Available on orders of 5 or more domains. Use our verified domains, warm for 2 weeks (instead of the standard 1 week), launch in week 3, stay in suggested limits, keep copy clean. If deliverability doesn't perform, 50% refund on domain costs.",
+        a: '$5/domain one-time add-on. Available on orders of 6 or more domains. Use our verified domains, warm for 2 weeks, launch in week 3, stay in suggested limits, and keep copy clean. The guarantee applies only during week 3, and refund requests must be submitted that same week after all criteria are met.',
       },
       {
         q: 'How fast can I start sending?',
-        a: 'Without guarantee: Order today, inboxes configured in 24-48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch in week 3.',
+        a: 'Without guarantee: Order today, inboxes configured in 24-48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.',
       },
       {
         q: 'Is there a minimum commitment?',

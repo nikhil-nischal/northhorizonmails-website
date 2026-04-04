@@ -277,37 +277,31 @@ function createPricingCard(plan, index) {
     card.appendChild(button);
   }
 
-  if (plan.ctaTag) {
-    const ctaTag = document.createElement('p');
+  if (plan.ctaTag || plan.ctaDetail) {
+    const ctaTag = document.createElement('div');
     ctaTag.className = 'plan-cta-tag';
-    ctaTag.textContent = plan.ctaTag;
+    const kicker = document.createElement('span');
+    kicker.className = 'plan-cta-tag-kicker';
+    kicker.textContent = 'Ideal for';
+
+    ctaTag.appendChild(kicker);
+
+    if (plan.ctaTag) {
+      const copy = document.createElement('span');
+      copy.className = 'plan-cta-tag-copy';
+      copy.textContent = plan.ctaTag;
+      ctaTag.appendChild(copy);
+    }
+
+    if (plan.ctaDetail) {
+      const detail = document.createElement('span');
+      detail.className = 'plan-cta-tag-detail';
+      detail.textContent = plan.ctaDetail;
+      ctaTag.appendChild(detail);
+    }
+
     card.appendChild(ctaTag);
   }
-
-  return card;
-}
-
-function bestForCopy(text) {
-  return String(text || '').replace(/^Best for:\s*/iu, '');
-}
-
-function createPricingGuideCard(plan, index) {
-  const card = document.createElement('div');
-  const classes = ['pricing-fit-card', 'fi'];
-  const delay = delayClass(index);
-  if (delay) classes.push(delay);
-  if (plan.featured) classes.push('featured');
-  card.className = classes.join(' ');
-
-  const label = document.createElement('p');
-  label.className = 'pricing-fit-label';
-  label.textContent = plan.label;
-  card.appendChild(label);
-
-  const body = document.createElement('p');
-  body.className = 'pricing-fit-copy';
-  body.textContent = bestForCopy(plan.bestFor);
-  card.appendChild(body);
 
   return card;
 }
@@ -544,61 +538,8 @@ function applyHomeContent() {
       pricing.plans.forEach((plan, index) => cards.appendChild(createPricingCard(plan, index)));
     }
 
-    const pricingContainer = document.querySelector('#pricing .container');
-    const pricingAddons = document.querySelector('#pricing .pricing-addons');
-    let pricingFit = document.querySelector('#pricing .pricing-fit');
-    let pricingFitHeader;
-    let pricingFitTag;
-    let pricingFitHeadline;
-    let pricingFitGrid;
-
-    if (pricingContainer && pricingAddons && !pricingFit) {
-      pricingFit = document.createElement('div');
-      pricingFit.className = 'pricing-fit fi';
-
-      pricingFitHeader = document.createElement('div');
-      pricingFitHeader.className = 'pricing-fit-hd';
-
-      pricingFitTag = document.createElement('p');
-      pricingFitTag.className = 'pricing-fit-tag';
-      pricingFitHeader.appendChild(pricingFitTag);
-
-      pricingFitHeadline = document.createElement('h3');
-      pricingFitHeadline.className = 'pricing-fit-headline';
-      pricingFitHeader.appendChild(pricingFitHeadline);
-
-      pricingFitGrid = document.createElement('div');
-      pricingFitGrid.className = 'pricing-fit-grid';
-
-      pricingFit.appendChild(pricingFitHeader);
-      pricingFit.appendChild(pricingFitGrid);
-      pricingContainer.insertBefore(pricingFit, pricingAddons);
-    } else if (pricingFit) {
-      pricingFitHeader = pricingFit.querySelector('.pricing-fit-hd');
-      pricingFitTag = pricingFit.querySelector('.pricing-fit-tag');
-      pricingFitHeadline = pricingFit.querySelector('.pricing-fit-headline');
-      pricingFitGrid = pricingFit.querySelector('.pricing-fit-grid');
-    }
-
-    if (pricingFitTag) {
-      setText(pricingFitTag, pricing.bestForSection?.tag || 'Quick guide');
-    }
-
-    if (pricingFitHeadline) {
-      setText(
-        pricingFitHeadline,
-        pricing.bestForSection?.headline || 'Choose the plan that matches how you send.'
-      );
-    }
-
-    if (pricingFitGrid) {
-      clearChildren(pricingFitGrid);
-      pricing.plans
-        .filter((plan) => plan.id !== 'custom' && plan.bestFor)
-        .forEach((plan, index) => {
-          pricingFitGrid.appendChild(createPricingGuideCard(plan, index));
-        });
-    }
+    const pricingFit = document.querySelector('#pricing .pricing-fit');
+    if (pricingFit) pricingFit.remove();
 
     const addonCards = document.querySelectorAll('#pricing .addon-card');
     if (addonCards[0]) {
