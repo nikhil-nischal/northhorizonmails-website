@@ -1002,11 +1002,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!copied) return;
 
         const defaultLabel = anchor.dataset.defaultLabel || anchor.textContent || 'Contact Us';
-        anchor.textContent = 'Email Copied';
+        anchor.textContent = text;
 
         window.setTimeout(() => {
           anchor.textContent = defaultLabel;
-        }, 1600);
+        }, 2200);
       });
     });
   });

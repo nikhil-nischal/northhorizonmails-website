@@ -341,7 +341,7 @@ const CONTENT = {
       'Stay within suggested daily sending limits',
       'No spam trigger words in your copy',
     ],
-    result:     'Follow every step. If deliverability still does not perform during week 3, submit your request that same week and we refund 50% of the subscription fees we charged.',
+    result:     'Follow every step. If deliverability still does not perform during week 3, submit your request and we refund 50% of the subscription fees.',
     whyTitle:   'Why we can offer this',
     why: [
       'Individual US-based Microsoft tenants on Azure.',
