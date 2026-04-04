@@ -277,37 +277,31 @@ function createPricingCard(plan, index) {
     card.appendChild(button);
   }
 
-  if (plan.ctaTag) {
-    const ctaTag = document.createElement('p');
+  if (plan.ctaTag || plan.ctaDetail) {
+    const ctaTag = document.createElement('div');
     ctaTag.className = 'plan-cta-tag';
-    ctaTag.textContent = plan.ctaTag;
+    const kicker = document.createElement('span');
+    kicker.className = 'plan-cta-tag-kicker';
+    kicker.textContent = 'Ideal for';
+
+    ctaTag.appendChild(kicker);
+
+    if (plan.ctaTag) {
+      const copy = document.createElement('span');
+      copy.className = 'plan-cta-tag-copy';
+      copy.textContent = plan.ctaTag;
+      ctaTag.appendChild(copy);
+    }
+
+    if (plan.ctaDetail) {
+      const detail = document.createElement('span');
+      detail.className = 'plan-cta-tag-detail';
+      detail.textContent = plan.ctaDetail;
+      ctaTag.appendChild(detail);
+    }
+
     card.appendChild(ctaTag);
   }
-
-  return card;
-}
-
-function bestForCopy(text) {
-  return String(text || '').replace(/^Best for:\s*/iu, '');
-}
-
-function createPricingGuideCard(plan, index) {
-  const card = document.createElement('div');
-  const classes = ['pricing-fit-card', 'fi'];
-  const delay = delayClass(index);
-  if (delay) classes.push(delay);
-  if (plan.featured) classes.push('featured');
-  card.className = classes.join(' ');
-
-  const label = document.createElement('p');
-  label.className = 'pricing-fit-label';
-  label.textContent = plan.label;
-  card.appendChild(label);
-
-  const body = document.createElement('p');
-  body.className = 'pricing-fit-copy';
-  body.textContent = bestForCopy(plan.bestFor);
-  card.appendChild(body);
 
   return card;
 }
@@ -544,61 +538,8 @@ function applyHomeContent() {
       pricing.plans.forEach((plan, index) => cards.appendChild(createPricingCard(plan, index)));
     }
 
-    const pricingContainer = document.querySelector('#pricing .container');
-    const pricingAddons = document.querySelector('#pricing .pricing-addons');
-    let pricingFit = document.querySelector('#pricing .pricing-fit');
-    let pricingFitHeader;
-    let pricingFitTag;
-    let pricingFitHeadline;
-    let pricingFitGrid;
-
-    if (pricingContainer && pricingAddons && !pricingFit) {
-      pricingFit = document.createElement('div');
-      pricingFit.className = 'pricing-fit fi';
-
-      pricingFitHeader = document.createElement('div');
-      pricingFitHeader.className = 'pricing-fit-hd';
-
-      pricingFitTag = document.createElement('p');
-      pricingFitTag.className = 'pricing-fit-tag';
-      pricingFitHeader.appendChild(pricingFitTag);
-
-      pricingFitHeadline = document.createElement('h3');
-      pricingFitHeadline.className = 'pricing-fit-headline';
-      pricingFitHeader.appendChild(pricingFitHeadline);
-
-      pricingFitGrid = document.createElement('div');
-      pricingFitGrid.className = 'pricing-fit-grid';
-
-      pricingFit.appendChild(pricingFitHeader);
-      pricingFit.appendChild(pricingFitGrid);
-      pricingContainer.insertBefore(pricingFit, pricingAddons);
-    } else if (pricingFit) {
-      pricingFitHeader = pricingFit.querySelector('.pricing-fit-hd');
-      pricingFitTag = pricingFit.querySelector('.pricing-fit-tag');
-      pricingFitHeadline = pricingFit.querySelector('.pricing-fit-headline');
-      pricingFitGrid = pricingFit.querySelector('.pricing-fit-grid');
-    }
-
-    if (pricingFitTag) {
-      setText(pricingFitTag, pricing.bestForSection?.tag || 'Quick guide');
-    }
-
-    if (pricingFitHeadline) {
-      setText(
-        pricingFitHeadline,
-        pricing.bestForSection?.headline || 'Choose the plan that matches how you send.'
-      );
-    }
-
-    if (pricingFitGrid) {
-      clearChildren(pricingFitGrid);
-      pricing.plans
-        .filter((plan) => plan.id !== 'custom' && plan.bestFor)
-        .forEach((plan, index) => {
-          pricingFitGrid.appendChild(createPricingGuideCard(plan, index));
-        });
-    }
+    const pricingFit = document.querySelector('#pricing .pricing-fit');
+    if (pricingFit) pricingFit.remove();
 
     const addonCards = document.querySelectorAll('#pricing .addon-card');
     if (addonCards[0]) {
@@ -896,7 +837,50 @@ function applyHomeContent() {
   }
 }
 
+// ── Custom cursor (runs immediately, before DOMContentLoaded) ──
+(function initCursor() {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const dot = document.querySelector('.cursor-dot');
+  if (!dot) return;
+
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0;
+  const LERP = 0.13;
+  const HALF = 7; // half of 14px cursor size
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.classList.add('visible');
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => dot.classList.remove('visible'));
+  document.addEventListener('mouseenter', () => dot.classList.add('visible'));
+
+  (function loop() {
+    dotX += (mouseX - dotX) * LERP;
+    dotY += (mouseY - dotY) * LERP;
+    dot.style.transform = `translate(${dotX - HALF}px, ${dotY - HALF}px)`;
+    requestAnimationFrame(loop);
+  }());
+}());
+
 document.addEventListener('DOMContentLoaded', () => {
+  // ── 0. Lenis smooth scroll ───────────────────
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      lerp: 0.09,
+      smoothWheel: true,
+    });
+    window.__lenis = lenis;
+
+    (function rafLoop(time) {
+      lenis.raf(time);
+      requestAnimationFrame(rafLoop);
+    }(performance.now()));
+  }
+
   applySharedContactDetails();
 
   // ── 1. Apply homepage content source of truth ──
@@ -993,12 +977,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) return;
 
       e.preventDefault();
-      const offset = parseInt(
+      const navH = parseInt(
         getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
         10
       ) || 68;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+
+      if (window.__lenis) {
+        window.__lenis.scrollTo(target, { offset: -(navH + 16) });
+      } else {
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     });
   });
 
@@ -1013,11 +1002,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!copied) return;
 
         const defaultLabel = anchor.dataset.defaultLabel || anchor.textContent || 'Contact Us';
-        anchor.textContent = 'Email Copied';
+        anchor.textContent = text;
 
         window.setTimeout(() => {
           anchor.textContent = defaultLabel;
-        }, 1600);
+        }, 2200);
       });
     });
   });

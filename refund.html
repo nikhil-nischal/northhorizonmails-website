@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="styles/page.css" />
 </head>
 <body>
+<div class="cursor-dot" aria-hidden="true"></div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
@@ -80,7 +81,7 @@
           <p>NorthHorizonMails operates on a month-to-month, no-contract basis. We believe in fair and transparent billing. This policy explains when refunds are available, how to request them, and what timelines to expect.</p>
           <p>All fees are charged in USD via Stripe. Refunds, where applicable, are issued back to the original payment method.</p>
           <div class="highlight-box">
-            <p><strong>Short version:</strong> Standard services are non-refundable once provisioned. The Deliverability Guarantee provides a 50% refund on domain costs if our infrastructure underperforms after you follow the system. Cancel anytime — no cancellation fee, no contract.</p>
+            <p><strong>Short version:</strong> Standard services are non-refundable once provisioned. The Deliverability Guarantee provides a 50% refund on the subscription fees we charged if our infrastructure underperforms after you follow the system. Cancel anytime — no cancellation fee, no contract.</p>
           </div>
         </div>
 
@@ -99,7 +100,7 @@
 
         <div class="article-section" id="deliverability-guarantee">
           <h2>3. Deliverability Guarantee Refund</h2>
-          <p>The Deliverability Guarantee is an optional $10/domain every 4 weeks add-on that entitles you to a 50% refund on your domain costs if our infrastructure fails to deliver to the primary inbox after you follow the required system.</p>
+          <p>The Deliverability Guarantee is an optional one-time $5/domain add-on, available on orders of 6 or more domains, that entitles you to a 50% refund on the subscription fees we charged if our infrastructure fails to deliver to the primary inbox during week 3 after you follow the required system.</p>
 
           <h3>What qualifies</h3>
           <ul>
@@ -110,21 +111,21 @@
             <li>You stayed within the suggested daily sending limits</li>
             <li>Your email copy does not contain spam trigger words</li>
             <li>You can demonstrate inbox placement failure using a standard testing tool (e.g., GlockApps)</li>
-            <li>Your claim is submitted within 30 days of your week 3 campaign launch</li>
+            <li>Your claim is submitted during week 3, after all guarantee criteria have been met</li>
           </ul>
 
           <h3>What the refund covers</h3>
-          <p>The refund is 50% of the domain fees for the affected domains in the billing period during which the failure occurred. It does not cover inbox fees, setup fees, or the Guarantee add-on fee itself.</p>
+          <p>The refund is 50% of the subscription fees we charged for the affected domains. It does not cover setup fees or the Guarantee add-on fee itself.</p>
 
           <h3>Example calculation</h3>
-          <p>If you have 10 domains on Premium ($65/domain every 4 weeks) and all 10 qualify for a claim: your domain costs are $650 every 4 weeks. The refund is 50% = $325.</p>
+          <p>If you have 10 domains on Premium ($65/domain every 4 weeks) and all 10 qualify for a claim: the subscription fees charged are $650. The refund is 50% = $325.</p>
 
           <p>For full conditions and the claims process, see the <a href="guarantee.html">Guarantee page</a>.</p>
         </div>
 
         <div class="article-section" id="setup-issues">
           <h2>4. Setup Issues</h2>
-          <p>If we are unable to deliver your provisioned inboxes within the stated 24-48 hour timeframe due to a technical issue on our end, you are entitled to a full refund for the affected order.</p>
+          <p>If we are unable to deliver your provisioned inboxes within the stated 48-hour timeframe due to a technical issue on our end, you are entitled to a full refund for the affected order.</p>
           <p>If your inboxes are delivered but are non-functional due to our error (e.g., incorrect DNS configuration that we did not remediate), we will either fix the issue at no additional charge or issue a prorated refund for the affected period.</p>
           <p>Setup issues must be reported within 7 days of order delivery. Issues reported after 7 days are handled at our discretion.</p>
         </div>
@@ -136,7 +137,7 @@
             <li><strong>Provisioned and delivered inboxes</strong> where setup was completed successfully and the service functioned as described</li>
             <li><strong>Unused days</strong> within a paid billing period after cancellation</li>
             <li><strong>Deliverability issues caused by your email copy</strong>, list quality, or failure to follow the recommended warmup and sending schedule</li>
-            <li><strong>Deliverability Guarantee add-on fees</strong> ($10/domain every 4 weeks) — these are the cost of the guarantee itself</li>
+            <li><strong>Deliverability Guarantee add-on fees</strong> ($5/domain one-time) — these are the cost of the guarantee itself</li>
             <li><strong>Domain replacement services</strong> — free domain replacements are provided as a service benefit, not as a refund trigger</li>
             <li><strong>Services cancelled after the warmup and launch period</strong> where campaigns were operating successfully</li>
             <li><strong>Accounts terminated for violations</strong> of our Acceptable Use Policy</li>
@@ -170,7 +171,7 @@
           <h2>8. Contact</h2>
           <p>For refund requests, billing questions, or cancellation:</p>
           <p><strong>Email:</strong> <a href="#" data-contact-email>Contact Email</a></p>
-          <p>Our support team responds within 24-48 hours on business days.</p>
+          <p>Our support team responds within 48 hours on business days.</p>
         </div>
 
       </div>
@@ -211,6 +212,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="js/contact.js?v=20260402-8"></script>
 <script src="js/config.js?v=20260402-8"></script>
 <script src="js/app.js?v=20260402-8"></script>

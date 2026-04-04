@@ -59,6 +59,30 @@
   background: var(--accent-bg);
 }
 
+/* ── Custom cursor (desktop only) ── */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .cursor-dot.visible {
+    opacity: 1;
+  }
+}
+
 /* ── Check icon (pricing features) ── */
 .chk {
   width: 17px;

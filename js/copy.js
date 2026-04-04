@@ -40,7 +40,7 @@ const COPY_HERO = {
     "Outlook inboxes that land in primary or we pay you back.",
 
   subheadline:
-    "US-based Microsoft tenants. DNS fully configured. Connected directly into your Instantly account. Launch-ready in 24-48 hours. Add our deliverability guarantee and if it doesn't perform, we refund 50%.",
+    "US-based Microsoft tenants. DNS fully configured. Connected directly into your Instantly account. Launch-ready within 48 hours. Add our deliverability guarantee and if it doesn't perform, we refund 50%.",
 
   primaryCta:   "Get Started",
   secondaryCta: "See How It Works ↓",
@@ -86,7 +86,7 @@ const COPY_PROBLEM = {
 
 
 // ─────────────────────────────────────────────────────
-// WHAT'S INCLUDED — 7 PILLARS
+// WHAT'S INCLUDED — 9 PILLARS
 // ─────────────────────────────────────────────────────
 
 const COPY_INCLUDED = {
@@ -103,26 +103,34 @@ const COPY_INCLUDED = {
   pillar2_body:
     "SPF. DKIM. DMARC. All configured before your inboxes reach you. You don't touch a single DNS record. We handle it because one wrong record kills deliverability and we don't leave that to chance.",
 
-  pillar3_title: "White-Glove Setup",
+  pillar3_title: "Aged Domain Support",
   pillar3_body:
-    "We don't send you credentials and say good luck. We connect every inbox directly into your Instantly or Plusvibe account. You open your sending tool and your inboxes are there, ready to warm up. No manual imports. No SMTP headaches. Contact us if you need setup for other platforms.",
+    "Need stronger domain quality from day one? We help you source 10+ year aged domains with a 10+ infrastructure score, giving you a cleaner foundation for deliverability.",
 
-  pillar4_title: "Free Domain Replacement",
+  pillar4_title: "Within 48-Hour Delivery",
   pillar4_body:
+    "Tenants provisioned, DNS configured, inboxes connected within 48 hours. You order, we build, you warm up.",
+
+  pillar5_title: "Free Domain Replacement",
+  pillar5_body:
     "Domain gets burned? We replace it. No extra charge. No questions. Operators scale aggressively and we built our system to handle that reality.",
 
-  pillar5_title: "15+ Sending Tool Compatibility",
-  pillar5_body:
+  pillar6_title: "15+ Sending Tool Compatibility",
+  pillar6_body:
     "Instantly, Smartlead, Salesforge, or any SMTP-compatible platform. White-glove setup is available for Instantly and Plusvibe. Contact us to add other tools.",
 
-  pillar6_title: "Deliverability Guarantee",
-  pillar6_badge: "$10/domain add-on",
-  pillar6_body:
-    "Follow our system. Verified domains, 2-week warmup, recommended sending limits, clean copy. If deliverability still doesn't perform, we refund 50% of your domain costs. No other provider offers this. We do because we trust our infrastructure.",
-
-  pillar7_title: "Flexible Inbox Counts",
+  pillar7_title: "Custom Profile Pictures",
   pillar7_body:
-    "Not every campaign needs 99 inboxes. Choose 25, 49, 74, or 99 mailboxes/domain based on your volume needs. Scale up or down as your campaigns evolve.",
+    "Set real profile pictures on every mailbox. Emails with profile photos look human and build trust. Higher open rates and reply rates.",
+
+  pillar8_title: "Mailbox Access",
+  pillar8_body:
+    "Access your mailboxes to reply directly from the inbox. Useful when earlier conversations aren't accessible in your email outreach software.",
+
+  pillar9_title: "Deliverability Guarantee",
+  pillar9_badge: "$5/domain add-on",
+  pillar9_body:
+    "Follow our system. Verified domains, 2-week warmup, week-3-only guarantee window, recommended sending limits, clean copy. Available on orders of 6 or more domains. If deliverability still doesn't perform in week 3, request your refund that week and we refund 50% of the subscription fees we charged.",
 };
 
 
@@ -146,7 +154,7 @@ const COPY_HOW_IT_WORKS = {
   step1_body:
     "Choose Normal, Premium, or Mixed. Select how many domains you need and how many mailboxes/domain (25, 49, 74, or 99).",
 
-  step2_title: "We build your infrastructure (24-48 hrs)",
+  step2_title: "We build your infrastructure (within 48 hrs)",
   step2_body:
     "We provision individual US Microsoft tenants, configure all DNS authentication, and connect your inboxes directly into your Instantly or Plusvibe account. You do nothing.",
 
@@ -159,7 +167,7 @@ const COPY_HOW_IT_WORKS = {
     "You're live. Fully configured Outlook inboxes. Bulletproof Microsoft Azure infrastructure. Sending from primary, not promo, not spam.",
 
   note:
-    "Most operators order on Monday and are warming up by Wednesday. By week 2, campaigns are live and landing replies. If you add the Deliverability Guarantee, warmup extends to 2 weeks with launch in week 3 instead of week 2 to ensure maximum inbox placement.",
+    "Most operators order on Monday and are warming up by Wednesday. Without the guarantee, campaigns are live in week 2. With the guarantee, warmup extends to 2 full weeks, launch happens in week 3, and the refund window applies only during that week.",
 };
 
 
@@ -257,9 +265,9 @@ const COPY_PRICING = {
     "Running at scale? Every 11 domains you purchase comes with a free one. Simple volume reward for operators scaling up.",
 
   guarantee_title:
-    "Deliverability Guarantee Add-On — $10/domain/month",
+    "Deliverability Guarantee Add-On — $5/domain one-time",
   guarantee_body:
-    "Add to any plan. Requires 2-week warmup (launch in week 3 instead of week 2). If deliverability doesn't perform after following our system, we refund 50% of your domain costs.",
+    "Add to any plan. Available on orders of 6 or more domains. Requires a full 2-week warmup, applies only during week 3, and refund requests must be submitted in week 3 after all criteria are met.",
 };
 
 
@@ -312,7 +320,7 @@ const COPY_GUARANTEE = {
     "We built infrastructure we're willing to bet on.",
 
   subheadline:
-    "Add the Deliverability Guarantee to any plan for $10/domain/month.",
+    "Add the Deliverability Guarantee to any plan for a one-time $5/domain. Available on orders of 6 or more domains.",
 
   intro:
     "Every inbox provider tells you their infrastructure is solid. We're the only one that puts money behind it.",
@@ -329,7 +337,7 @@ const COPY_GUARANTEE = {
   ],
 
   result:
-    "Follow every step. If deliverability still doesn't perform, we refund 50% of your domain costs.",
+    "Follow every step. If deliverability still doesn't perform during week 3, submit your request that same week and we refund 50% of the subscription fees we charged.",
 
   why_title: "Why we can offer this",
   why_body:
@@ -337,7 +345,7 @@ const COPY_GUARANTEE = {
 
   timing_title: "Note on timing",
   timing_body:
-    "The guarantee requires a 2-week warmup instead of the standard 1 week. This extra week ensures your domains build maximum sender reputation before you launch. You go live in week 3 instead of week 2.",
+    "The guarantee requires a 2-week warmup instead of the standard 1 week. You launch in week 3, the guarantee applies only during that week, and refund requests must be submitted in week 3 after all criteria are met.",
 
   disclaimer:
     "This guarantee is for operators who follow the system. If you send 50 emails per inbox on day one with a subject line that says \"ACT NOW!!!\" that's not an infrastructure problem. We guarantee the foundation. You bring the discipline.",
@@ -387,7 +395,7 @@ const COPY_FAQ = {
     "Answers before you ask.",
 
   q1:  "What do I actually receive after ordering?",
-  a1:  "Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 24-48 hours.",
+  a1:  "Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 48 hours.",
 
   q2:  "Can I choose how many inboxes I want per domain?",
   a2:  "Yes. Every plan lets you choose 25, 49, 74, or 99 mailboxes/domain. Pick based on your campaign volume needs.",
@@ -395,32 +403,38 @@ const COPY_FAQ = {
   q3:  "Can I use my own domains?",
   a3:  "Yes. Bring your own or purchase our verified domains. The deliverability guarantee requires our verified domains.",
 
-  q4:  "How many cold emails can I send per inbox per day?",
-  a4:  "Normal: 4-5 per inbox/day. Premium: 8-10 per inbox/day. Stay within these to protect reputation and maximize inbox placement.",
+  q4:  "Can I set profile pictures on the mailboxes?",
+  a4:  "Yes. Every mailbox comes with the ability to set a custom profile picture. This makes your outreach look more human and increases open and reply rates.",
 
-  q5:  "What's the difference between Normal and Premium?",
-  a5:  "Both run on US-based Microsoft Azure infrastructure with bulletproof IP reputation. Premium uses a higher-tier Microsoft license on separate infrastructure that most cold emailers don't use. That means cleaner IP pools, less spam association, higher deliverability, and more sends per inbox per day. If you're targeting high-value ICPs, Premium is worth it.",
+  q5:  "Can I log into the mailboxes directly?",
+  a5:  "Yes. You get mailbox access to reply to emails directly from the inbox. This is especially helpful when earlier conversations aren't accessible in your outreach software.",
 
-  q6:  "I use Smartlead, not Instantly. Will this work?",
-  a6:  "Yes. Our inboxes work with any SMTP-compatible tool. Instantly, Smartlead, Salesforge, and 15+ others. White-glove setup (we connect it for you) is available for Instantly and Plusvibe. For other tools, we provide SMTP credentials. Contact us if you need white-glove setup for a different platform.",
+  q6:  "How many cold emails can I send per inbox per day?",
+  a6:  "Normal: 4-5 per inbox/day. Premium: 8-10 per inbox/day. Stay within these to protect reputation and maximize inbox placement.",
 
-  q7:  "What happens if a domain gets burned?",
-  a7:  "Free replacement. No charge. We swap it out and reconfigure everything.",
+  q7:  "What's the difference between Normal and Premium?",
+  a7:  "Both run on US-based Microsoft Azure infrastructure with bulletproof IP reputation. Premium uses a higher-tier Microsoft license on separate infrastructure that most cold emailers don't use. That means cleaner IP pools, less spam association, higher deliverability, and more sends per inbox per day. If you're targeting high-value ICPs, Premium is worth it.",
 
-  q8:  "How does the guarantee work exactly?",
-  a8:  "$10/domain/month add-on. Use our verified domains, warm for 2 weeks (instead of the standard 1 week), launch in week 3, stay in suggested limits, keep copy clean. If deliverability doesn't perform, 50% refund on domain costs.",
+  q8:  "I use Smartlead, not Instantly. Will this work?",
+  a8:  "Yes. Our inboxes work with any SMTP-compatible tool. Instantly, Smartlead, Salesforge, and 15+ others. White-glove setup (we connect it for you) is available for Instantly and Plusvibe. For other tools, we provide SMTP credentials. Contact us if you need white-glove setup for a different platform.",
 
-  q9:  "How fast can I start sending?",
-  a9:  "Without guarantee: Order today, inboxes configured in 24-48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch in week 3.",
+  q9:  "What happens if a domain gets burned?",
+  a9:  "Free replacement. No charge. We swap it out and reconfigure everything.",
 
-  q10: "Is there a minimum commitment?",
-  a10: "No contracts. Month-to-month. Cancel anytime.",
+  q10: "How does the guarantee work exactly?",
+  a10: "$5/domain one-time add-on. Available on orders of 6 or more domains. Use our verified domains, warm for 2 weeks, launch in week 3, stay in suggested limits, and keep copy clean. The guarantee applies only during week 3, and refund requests must be submitted that same week after all criteria are met.",
 
-  q11: "How does \"Buy 11, get 12\" work?",
-  a11: "For every 11 domains you purchase, you get one free. Simple volume reward for operators scaling up.",
+  q11: "How fast can I start sending?",
+  a11: "Without guarantee: Order today, inboxes configured within 48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.",
 
-  q12: "What makes you different from other inbox providers?",
-  a12: "Three things. One, we set up everything inside your Instantly or Plusvibe account. You don't touch DNS or import credentials manually. Two, free domain replacement if anything burns. Three, we're the only provider that offers a deliverability guarantee backed by a 50% refund. Nobody else puts their money on the line.",
+  q12: "Is there a minimum commitment?",
+  a12: "No contracts. Month-to-month. Cancel anytime.",
+
+  q13: "How does \"Buy 11, get 12\" work?",
+  a13: "For every 11 domains you purchase, you get one free. Simple volume reward for operators scaling up.",
+
+  q14: "What makes you different from other inbox providers?",
+  a14: "Three things. One, we set up everything inside your Instantly or Plusvibe account. You don't touch DNS or import credentials manually. Two, free domain replacement if anything burns. Three, we're the only provider that offers a deliverability guarantee backed by a 50% refund. Nobody else puts their money on the line.",
 };
 
 
@@ -438,7 +452,7 @@ const COPY_FINAL_CTA = {
   ctaButton: "Get Started",
 
   trustNotes: [
-    "24-48 hour setup",
+    "Within 48 hours",
     "No contracts",
     "Cancel anytime",
   ],

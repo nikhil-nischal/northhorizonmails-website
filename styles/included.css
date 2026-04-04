@@ -30,10 +30,15 @@
 .pillar {
   background: var(--bg-alt);
   padding: 36px 30px;
-  transition: background 0.2s;
+  transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+  position: relative;
+  z-index: 0;
 }
 .pillar:hover {
-  background: #F9F9F7;
+  background: #F5F5F3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
+  z-index: 1;
 }
 
 /* ── Pillar icon ── */
@@ -48,10 +53,15 @@
   margin-bottom: 18px;
   color: var(--accent);
   flex-shrink: 0;
+  transition: transform 0.22s ease, background 0.22s ease;
 }
 .p-icon svg {
   width: 20px;
   height: 20px;
+}
+.pillar:hover .p-icon {
+  transform: scale(1.12);
+  background: rgba(37, 99, 235, 0.14);
 }
 
 .pillar h3 {
@@ -110,9 +120,26 @@
 @media (max-width: 560px) {
   .pillars {
     grid-template-columns: 1fr;
-    border-radius: var(--radius);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    gap: 12px;
   }
   .pillar {
-    padding: 28px 22px;
+    padding: 26px 22px;
+    border: 1px solid var(--border-solid);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+  }
+  .p-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Body text stays left-aligned for readability */
+  .pillar p,
+  .pillar ul,
+  .pillar li {
+    text-align: left;
   }
 }
