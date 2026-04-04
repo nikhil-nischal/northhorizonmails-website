@@ -5,7 +5,36 @@
 #hero {
   padding: calc(var(--nav-h) + 80px) 0 100px;
   text-align: center;
-  background: radial-gradient(ellipse at 50% -10%, rgba(37, 99, 235, 0.07) 0%, transparent 65%), var(--bg);
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating gradient orbs */
+#hero::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.09) 0%, transparent 70%);
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: float-orb-center 9s ease-in-out infinite;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.06) 0%, transparent 70%);
+  bottom: -160px;
+  right: -80px;
+  pointer-events: none;
+  animation: float-orb-side 13s ease-in-out infinite;
 }
 
 .hero-badge {
@@ -28,6 +57,7 @@
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
+  animation: pulse-ring 2.8s ease-out infinite;
 }
 
 #hero h1 {
@@ -57,6 +87,42 @@
   padding: 14px 28px;
 }
 
+/* ── Stats strip ── */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 44px;
+  border: 1px solid var(--border-solid);
+  border-radius: 100px;
+  background: var(--bg-alt);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.hero-stats-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border-solid);
+  white-space: nowrap;
+}
+.hero-stats-item:last-child {
+  border-right: none;
+}
+.hero-stats-num {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   #hero {
@@ -68,6 +134,24 @@
   .hero-ctas .btn {
     font-size: 15px;
     padding: 13px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    border-radius: 14px;
+    flex-direction: column;
+    width: fit-content;
+    min-width: 200px;
+  }
+  .hero-stats-item {
+    justify-content: center;
+    border-right: none;
+    border-bottom: 1px solid var(--border-solid);
+    padding: 9px 22px;
+  }
+  .hero-stats-item:last-child {
+    border-bottom: none;
   }
 }
 

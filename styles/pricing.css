@@ -73,6 +73,7 @@
   border-color: var(--accent);
   border-width: 2px;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.07), var(--shadow-md);
+  background: linear-gradient(170deg, rgba(37, 99, 235, 0.04) 0%, white 36%);
 }
 .card.featured:hover {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.13), var(--shadow-lg);
@@ -93,6 +94,7 @@
   padding: 4px 12px;
   border-radius: 100px;
   white-space: nowrap;
+  animation: pulse-pill 3s ease-out infinite;
 }
 
 /* ── Card header ── */
@@ -332,6 +334,21 @@
 
   .card[data-plan="custom"] {
     max-width: none;
+  }
+
+  /* Center card header on mobile */
+  .plan-label,
+  .plan-price,
+  .plan-note,
+  .plan-period {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Features list stays left-aligned */
+  .plan-feats {
+    align-self: stretch;
+    text-align: left;
   }
 }
 

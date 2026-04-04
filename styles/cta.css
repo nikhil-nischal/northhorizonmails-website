@@ -4,7 +4,7 @@
 
 #final-cta {
   padding: var(--section-py) 0;
-  background: var(--bg-alt);
+  background: radial-gradient(ellipse at 50% -20%, rgba(37, 99, 235, 0.07) 0%, transparent 55%), var(--bg-alt);
   text-align: center;
   border-top: 1px solid var(--border-solid);
 }

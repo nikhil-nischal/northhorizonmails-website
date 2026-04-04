@@ -40,7 +40,7 @@ const COPY_HERO = {
     "Outlook inboxes that land in primary or we pay you back.",
 
   subheadline:
-    "US-based Microsoft tenants. DNS fully configured. Connected directly into your Instantly account. Launch-ready in 24-48 hours. Add our deliverability guarantee and if it doesn't perform, we refund 50%.",
+    "US-based Microsoft tenants. DNS fully configured. Connected directly into your Instantly account. Launch-ready within 48 hours. Add our deliverability guarantee and if it doesn't perform, we refund 50%.",
 
   primaryCta:   "Get Started",
   secondaryCta: "See How It Works ↓",
@@ -107,9 +107,9 @@ const COPY_INCLUDED = {
   pillar3_body:
     "Need stronger domain quality from day one? We help you source 10+ year aged domains with a 10+ infrastructure score, giving you a cleaner foundation for deliverability.",
 
-  pillar4_title: "24-48 Hour Delivery",
+  pillar4_title: "Within 48-Hour Delivery",
   pillar4_body:
-    "Tenants provisioned, DNS configured, inboxes connected within 24-48 hours. You order, we build, you warm up.",
+    "Tenants provisioned, DNS configured, inboxes connected within 48 hours. You order, we build, you warm up.",
 
   pillar5_title: "Free Domain Replacement",
   pillar5_body:
@@ -154,7 +154,7 @@ const COPY_HOW_IT_WORKS = {
   step1_body:
     "Choose Normal, Premium, or Mixed. Select how many domains you need and how many mailboxes/domain (25, 49, 74, or 99).",
 
-  step2_title: "We build your infrastructure (24-48 hrs)",
+  step2_title: "We build your infrastructure (within 48 hrs)",
   step2_body:
     "We provision individual US Microsoft tenants, configure all DNS authentication, and connect your inboxes directly into your Instantly or Plusvibe account. You do nothing.",
 
@@ -395,7 +395,7 @@ const COPY_FAQ = {
     "Answers before you ask.",
 
   q1:  "What do I actually receive after ordering?",
-  a1:  "Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 24-48 hours.",
+  a1:  "Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 48 hours.",
 
   q2:  "Can I choose how many inboxes I want per domain?",
   a2:  "Yes. Every plan lets you choose 25, 49, 74, or 99 mailboxes/domain. Pick based on your campaign volume needs.",
@@ -425,7 +425,7 @@ const COPY_FAQ = {
   a10: "$5/domain one-time add-on. Available on orders of 6 or more domains. Use our verified domains, warm for 2 weeks, launch in week 3, stay in suggested limits, and keep copy clean. The guarantee applies only during week 3, and refund requests must be submitted that same week after all criteria are met.",
 
   q11: "How fast can I start sending?",
-  a11: "Without guarantee: Order today, inboxes configured in 24-48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.",
+  a11: "Without guarantee: Order today, inboxes configured within 48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.",
 
   q12: "Is there a minimum commitment?",
   a12: "No contracts. Month-to-month. Cancel anytime.",
@@ -452,7 +452,7 @@ const COPY_FINAL_CTA = {
   ctaButton: "Get Started",
 
   trustNotes: [
-    "24-48 hour setup",
+    "Within 48 hours",
     "No contracts",
     "Cancel anytime",
   ],

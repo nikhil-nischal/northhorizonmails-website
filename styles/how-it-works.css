@@ -107,8 +107,8 @@
   position: relative;
   z-index: 2;
   flex-shrink: 0;
-  /* White ring so the connecting line appears to run BETWEEN circles */
-  box-shadow: 0 0 0 7px var(--bg);
+  /* White ring so the connecting line appears to run BETWEEN circles, plus accent glow */
+  box-shadow: 0 0 0 7px var(--bg), 0 4px 18px rgba(37, 99, 235, 0.30);
 }
 
 .step h3 {

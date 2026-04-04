@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(open /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)"
+      "Bash(open /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "WebFetch(domain:jorge-template.framer.website)",
+      "Bash(ls /Users/nikhilnischal/Coding/northhorizonmails-website/*.html)",
+      "Bash(sed -i '' 's/Launch-ready in 24-48 hours/Launch-ready within 48 hours/g' /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "Bash(sed -i '' 's/24-48 Hour Delivery/Within 48-Hour Delivery/g' /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "Bash(sed -i '' 's/within 24-48 hours\\\\. You order/within 48 hours. You order/g' /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "Bash(sed -i '' 's/We build your infrastructure \\(24-48 hrs\\)/We build your infrastructure \\(within 48 hrs\\)/g' /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "Bash(sed -i '' 's/Ready to warm up within 24-48 hours/Ready to warm up within 48 hours/g' /Users/nikhilnischal/Coding/northhorizonmails-website/index.html)",
+      "Bash(sed -i '' 's/Launch-ready in 24-48 hours/Launch-ready within 48 hours/g; s/24-48 Hour Delivery/Within 48-Hour Delivery/g; s/within 24-48 hours\\\\. You order/within 48 hours. You order/g; s/\\(24-48 hrs\\)/\\(within 48 hrs\\)/g; s/within 24-48 hours\\\\./within 48 hours./g; s/in 24-48 hours,/within 48 hours,/g; s/24-48 hour setup/Within 48 hours/g' /Users/nikhilnischal/Coding/northhorizonmails-website/js/copy.js)",
+      "Bash(sed -i '' 's/within 24-48 hours of confirmed payment/within 48 hours of confirmed payment/g; s/within 24-48 hours on business days/within 48 hours on business days/g' /Users/nikhilnischal/Coding/northhorizonmails-website/terms.html /Users/nikhilnischal/Coding/northhorizonmails-website/refund.html)"
     ]
   }
 }

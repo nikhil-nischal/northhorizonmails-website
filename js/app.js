@@ -837,7 +837,50 @@ function applyHomeContent() {
   }
 }
 
+// ── Custom cursor (runs immediately, before DOMContentLoaded) ──
+(function initCursor() {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const dot = document.querySelector('.cursor-dot');
+  if (!dot) return;
+
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0;
+  const LERP = 0.13;
+  const HALF = 7; // half of 14px cursor size
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.classList.add('visible');
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => dot.classList.remove('visible'));
+  document.addEventListener('mouseenter', () => dot.classList.add('visible'));
+
+  (function loop() {
+    dotX += (mouseX - dotX) * LERP;
+    dotY += (mouseY - dotY) * LERP;
+    dot.style.transform = `translate(${dotX - HALF}px, ${dotY - HALF}px)`;
+    requestAnimationFrame(loop);
+  }());
+}());
+
 document.addEventListener('DOMContentLoaded', () => {
+  // ── 0. Lenis smooth scroll ───────────────────
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      lerp: 0.09,
+      smoothWheel: true,
+    });
+    window.__lenis = lenis;
+
+    (function rafLoop(time) {
+      lenis.raf(time);
+      requestAnimationFrame(rafLoop);
+    }(performance.now()));
+  }
+
   applySharedContactDetails();
 
   // ── 1. Apply homepage content source of truth ──
@@ -934,12 +977,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) return;
 
       e.preventDefault();
-      const offset = parseInt(
+      const navH = parseInt(
         getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
         10
       ) || 68;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+
+      if (window.__lenis) {
+        window.__lenis.scrollTo(target, { offset: -(navH + 16) });
+      } else {
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     });
   });
 

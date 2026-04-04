@@ -18,11 +18,45 @@
 .fi.d3 { transition-delay: 0.30s; }
 .fi.d4 { transition-delay: 0.40s; }
 
+/* ── Premium keyframes ───────────────────── */
+
+/* Pulsing ring on hero badge dot */
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* Floating hero orb — centered */
+@keyframes float-orb-center {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-24px); }
+}
+
+/* Floating hero orb — side */
+@keyframes float-orb-side {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(18px); }
+}
+
+/* Pulse on pricing popular pill */
+@keyframes pulse-pill {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
 /* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .fi {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .hero-dot,
+  .popular-pill,
+  #hero::before,
+  #hero::after {
+    animation: none !important;
   }
 }

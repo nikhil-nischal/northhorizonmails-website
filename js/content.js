@@ -32,7 +32,7 @@ const CONTENT = {
     visible:     true,
     badge:       'The only Outlook provider that guarantees deliverability',
     headline:    'Outlook inboxes that land in primary or we pay you back.',
-    subheadline: 'US-based Microsoft tenants. Aged domain sourcing. DNS fully configured. Connected directly into your Instantly account. Launch-ready in 24-48 hours. Add our deliverability guarantee and if it doesn\'t perform, we refund 50%.',
+    subheadline: 'US-based Microsoft tenants. Aged domain sourcing. DNS fully configured. Connected directly into your Instantly account. Launch-ready within 48 hours. Add our deliverability guarantee and if it doesn\'t perform, we refund 50%.',
     primaryCta:   { label: 'Get Started',          href: '#pricing'      },
     secondaryCta: { label: 'See How It Works ↓',   href: '#how-it-works' },
   },
@@ -91,9 +91,9 @@ const CONTENT = {
         ],
       },
       {
-        title: '24-48 Hour Delivery',
+        title: 'Within 48-Hour Delivery',
         body:  [
-          'Tenants provisioned, DNS configured, inboxes connected within 24-48 hours.',
+          'Tenants provisioned, DNS configured, inboxes connected within 48 hours.',
           'You order, we build, you warm up.',
         ],
       },
@@ -160,7 +160,7 @@ const CONTENT = {
       },
       {
         n:     '2',
-        title: 'We build your infrastructure (24-48 hrs)',
+        title: 'We build your infrastructure (within 48 hrs)',
         body:  [
           'Individual US Microsoft tenants provisioned, DNS fully configured.',
           'Inboxes connected directly into your Instantly or Plusvibe account.',
@@ -183,7 +183,7 @@ const CONTENT = {
         ],
       },
     ],
-    note: "Most operators order on Friday and are warming up by Monday. Without the guarantee, campaigns are live in week 2. With the guarantee, warmup runs for 2 full weeks, launch happens in week 3, and the refund window applies only during that week.",
+    note: "Most operators order on Friday and are warming up by Monday. Warmups are complete by Week 0. Campaigns are live in Week 1.",
   },
 
   // ── PRICING ─────────────────────────────────
@@ -389,7 +389,7 @@ const CONTENT = {
     items: [
       {
         q: 'What do I actually receive after ordering?',
-        a: 'Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 24-48 hours.',
+        a: 'Fully configured Microsoft Outlook inboxes on individual US-based tenants. DNS records set up. Inboxes connected into your Instantly or Plusvibe account. Ready to warm up within 48 hours.',
       },
       {
         q: 'Can I choose how many inboxes I want per domain?',
@@ -429,7 +429,7 @@ const CONTENT = {
       },
       {
         q: 'How fast can I start sending?',
-        a: 'Without guarantee: Order today, inboxes configured in 24-48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.',
+        a: 'Without guarantee: Order today, inboxes configured within 48 hours, warm for 1 week, launch in week 2. With guarantee: Same setup, but warmup extends to 2 weeks, launch happens in week 3, and the guarantee window applies only in that week.',
       },
       {
         q: 'Is there a minimum commitment?',
@@ -452,7 +452,7 @@ const CONTENT = {
     headline:    "Stop gambling on infrastructure that doesn't guarantee anything.",
     subheadline: "Premium Outlook inboxes. White-glove setup. The only provider willing to refund you if deliverability doesn't perform.",
     cta:   { label: 'Get Started', href: '#pricing' },
-    notes: ['24-48 hour setup', 'No contracts', 'Cancel anytime'],
+    notes: ['Within 48 hours', 'No contracts', 'Cancel anytime'],
   },
 
   // ── FOOTER ──────────────────────────────────
