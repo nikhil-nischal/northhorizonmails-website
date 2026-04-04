@@ -132,7 +132,7 @@ const CONTENT = {
         body:  [
           'Follow our system — verified domains, 2-week warmup, clean copy.',
           'Available on orders of 6 or more domains, with the guarantee valid only during week 3.',
-          "If deliverability still doesn't perform in week 3, request your refund that week and we refund 50% of the subscription fees we charged.",
+          "If deliverability still doesn't perform in week 3, request your refund and we refund 50% of the subscription fees.",
         ],
       },
     ],

@@ -983,7 +983,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ) || 68;
 
       if (window.__lenis) {
-        window.__lenis.scrollTo(target, { offset: -(navH + 16) });
+        window.__lenis.scrollTo(target, {
+          offset: -(navH + 16),
+          duration: 1.9,
+          easing: (t) => 1 - Math.pow(1 - t, 4),
+        });
       } else {
         const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
         window.scrollTo({ top, behavior: 'smooth' });
