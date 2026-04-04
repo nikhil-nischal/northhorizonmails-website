@@ -89,7 +89,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  text-align: center;
   transition: box-shadow 0.25s, transform 0.25s;
+}
+
+/* Features list stays left-aligned */
+.card .plan-feats {
+  text-align: left;
 }
 .card:hover {
   box-shadow: var(--shadow-md);
