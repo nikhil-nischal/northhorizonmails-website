@@ -202,11 +202,10 @@ const CONTENT = {
         note:     'All Outlook licenses',
         period:   'per domain every 4 weeks',
         uniqueFeatures: [
-          '200-500 cold emails safely per domain/day',
+          '200-500 cold emails per domain/day',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
-          '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
@@ -226,13 +225,12 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         featured: true,
         uniqueFeatures: [
-          '500-800 cold emails safely per domain/day',
+          '500-800 cold emails per domain/day',
           'Higher-quality license less used by cold emailers',
           'Advanced batching techniques',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
-          '800+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
@@ -251,12 +249,11 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         note:     '50% Normal + 50% Premium licenses',
         uniqueFeatures: [
-          '300-600 cold emails safely per domain/day',
+          '300-600 cold emails per domain/day',
           'Advanced batching techniques',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)',
-          '500+ emails/day sending volume per domain',
           'Complete Technical Setup (SPF, DKIM, DMARC)',
           'Free Domain Replacement',
           'Aged Domain Sourcing Available',
