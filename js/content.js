@@ -202,7 +202,7 @@ const CONTENT = {
         note:     'All Outlook licenses',
         period:   'per domain every 4 weeks',
         uniqueFeatures: [
-          '2-5 cold emails safely per inbox/day',
+          '200-500 cold emails safely per domain/day',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
@@ -226,7 +226,7 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         featured: true,
         uniqueFeatures: [
-          '5-8 cold emails safely per inbox/day',
+          '500-800 cold emails safely per domain/day',
           'Higher-quality license less used by cold emailers',
           'Advanced batching techniques',
         ],
@@ -251,7 +251,7 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         note:     '50% Normal + 50% Premium licenses',
         uniqueFeatures: [
-          '3-6 cold emails safely per inbox/day',
+          '300-600 cold emails safely per domain/day',
           'Advanced batching techniques',
         ],
         features: [
@@ -411,7 +411,7 @@ const CONTENT = {
       },
       {
         q: 'How many cold emails can I send per inbox per day?',
-        a: 'Normal: 4-5 per inbox/day. Premium: 8-10 per inbox/day. Stay within these to protect reputation and maximize inbox placement.',
+        a: 'Normal: 200-500 per domain/day. Premium: 500-800 per domain/day. Stay within these to protect reputation and maximize inbox placement.',
       },
       {
         q: "What's the difference between Normal and Premium?",
