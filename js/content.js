@@ -202,7 +202,7 @@ const CONTENT = {
         note:     'All Outlook licenses',
         period:   'per domain every 4 weeks',
         uniqueFeatures: [
-          '4-5 cold emails safely per inbox/day',
+          '2-5 cold emails safely per inbox/day',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
@@ -226,8 +226,9 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         featured: true,
         uniqueFeatures: [
-          '8-10 cold emails safely per inbox/day',
+          '5-8 cold emails safely per inbox/day',
           'Higher-quality license less used by cold emailers',
+          'Advanced batching techniques',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain',
@@ -250,7 +251,8 @@ const CONTENT = {
         period:   'per domain every 4 weeks',
         note:     '50% Normal + 50% Premium licenses',
         uniqueFeatures: [
-          '4-5 cold emails safely per inbox/day',
+          '3-6 cold emails safely per inbox/day',
+          'Advanced batching techniques',
         ],
         features: [
           '25, 49, 74, or 99 Mailboxes/domain (split between Normal and Premium)',
