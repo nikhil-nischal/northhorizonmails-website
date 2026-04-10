@@ -198,7 +198,7 @@ const CONTENT = {
       {
         id:       'normal',
         label:    'Normal License',
-        price:    '$45',
+        price:    '$49',
         note:     'All Outlook licenses',
         period:   'per domain every 4 weeks',
         uniqueFeatures: [
@@ -220,7 +220,7 @@ const CONTENT = {
       {
         id:       'premium',
         label:    'Premium License',
-        price:    '$65',
+        price:    '$69',
         note:     'All Premium Outlook licenses',
         period:   'per domain every 4 weeks',
         featured: true,
@@ -245,7 +245,7 @@ const CONTENT = {
       {
         id:       'mixed',
         label:    'Mixed License',
-        price:    '$55',
+        price:    '$59',
         period:   'per domain every 4 weeks',
         note:     '50% Normal + 50% Premium licenses',
         uniqueFeatures: [
@@ -299,7 +299,7 @@ const CONTENT = {
     headline: "Not sure which license? Here's the honest breakdown.",
     rows: [
       { feature: 'Mailbox options',           normal: '25, 49, 74, or 99',                          premium: '25, 49, 74, or 99' },
-      { feature: 'Cost per inbox (at 99)',    normal: '~$0.45',                                     premium: '~$0.66' },
+      { feature: 'Cost per inbox (at 99)',    normal: '~$0.49',                                     premium: '~$0.70' },
       { feature: 'Cold sends per inbox/day',  normal: '3–5',                                        premium: '8–10' },
       { feature: 'Warmup time',               normal: '3–5 days',                                   premium: '3–5 days' },
       { feature: 'Deliverability',            normal: 'Good',                                       premium: 'Excellent' },
