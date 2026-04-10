@@ -186,7 +186,7 @@ const COPY_PRICING = {
 
   // ── Plan 1: Normal ──────────────────────────────
   normal_label:   "Normal License",
-  normal_price:   "$45",
+  normal_price:   "$49",
   normal_period:  "per domain / month",
   normal_features: [
     "25, 49, 74, or 99 Mailboxes/domain",
@@ -204,7 +204,7 @@ const COPY_PRICING = {
 
   // ── Plan 2: Mixed ───────────────────────────────
   mixed_label:   "Mixed License",
-  mixed_price:   "$55",
+  mixed_price:   "$59",
   mixed_period:  "per domain / month",
   mixed_note:    "50 Normal + 50 Premium Outlook licenses",
   mixed_features: [
@@ -223,7 +223,7 @@ const COPY_PRICING = {
   // ── Plan 3: Premium (Most Popular) ─────────────
   premium_label:      "Premium License",
   premium_badge:      "Most Popular",
-  premium_price:      "$65",
+  premium_price:      "$69",
   premium_period:     "per domain / month",
   premium_features: [
     "25, 49, 74, or 99 Mailboxes/domain",
@@ -284,7 +284,7 @@ const COPY_COMPARISON = {
   // Table rows: [feature label, normal value, premium value]
   tableRows: [
     ["Mailbox options",           "25, 49, 74, or 99",                     "25, 49, 74, or 99"],
-    ["Cost per inbox (at 99)",    "~$0.45",                                "~$0.66"],
+    ["Cost per inbox (at 99)",    "~$0.49",                                "~$0.70"],
     ["Cold sends per inbox/day",  "3–5",                                   "8–10"],
     ["Warmup time",               "3–5 days",                              "3–5 days"],
     ["Deliverability",            "Good",                                  "Excellent"],
